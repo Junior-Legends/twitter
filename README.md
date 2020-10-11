@@ -1,12 +1,11 @@
 # Twitter
 
-<br>
-<hr>
 Redesign Twitter for an amazing experience using MERN technologies
 
 <br>
 <br>
 <hr>
+## Built With
 Contributors : <span>  </span>
 [Mohammad MohammadAlian](https://github.com/mhmda-83) ||
 [Amirhossein Beigi](https://github.com/AmirhBeigi) ||
@@ -19,6 +18,10 @@ Contributors : <span>  </span>
 
 <br>
 <br>
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
 <br>
 
 Design with 🖤
