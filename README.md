@@ -6,7 +6,7 @@ Redesign Twitter for an amazing experience using MERN technologies
 <br>
 <hr>
 ## Built With
-Contributors : <span>  </span>
+Contributors : 
 [Mohammad MohammadAlian](https://github.com/mhmda-83) ||
 [Amirhossein Beigi](https://github.com/AmirhBeigi) ||
 [Amin darabniya](https://github.com/amin-da) ||
