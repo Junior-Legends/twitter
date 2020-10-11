@@ -5,10 +5,10 @@ Redesign Twitter for an amazing experience using MERN technologies
 <hr>
 ## Built With <br>
 Contributors : <br>
-*[Mohammad MohammadAlian](https://github.com/mhmda-83) <br>
-*[Amirhossein Beigi](https://github.com/AmirhBeigi) <br>
-*[Amin darabniya](https://github.com/amin-da) <br>
-*[Ham*ed Zeidabadi](https://github.com/hamed-zeidabadi)
+[Mohammad MohammadAlian](https://github.com/mhmda-83) <br>
+[Amirhossein Beigi](https://github.com/AmirhBeigi) <br>
+[Amin darabniya](https://github.com/amin-da) <br>
+[Hamed Zeidabadi](https://github.com/hamed-zeidabadi)
 
 <hr>
 
