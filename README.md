@@ -1,2 +1,2 @@
-# twitter
+# Twitter
 A Twitter Clone
