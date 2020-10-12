@@ -1,0 +1,28 @@
+{
+	"name": "twitter",
+	"version": "1.0.0",
+	"description": "Redesign Twitter for an amazing experience using MERN technologies",
+	"main": "index.js",
+	"scripts": {
+		"commit": "cz"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Junior-Legends/twitter.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/Junior-Legends/twitter/issues"
+	},
+	"homepage": "https://github.com/Junior-Legends/twitter#readme",
+	"devDependencies": {
+		"cz-conventional-changelog": "^3.3.0"
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
+	}
+}
