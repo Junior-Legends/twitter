@@ -1,11 +1,11 @@
-@import "../../../Scss/color.scss";
+@import "../../../Scss/Color.scss";
 
 .auth_sidebar {
 	display: flex;
 	flex-direction: column;
 	padding: 0 50px;
 	padding-top: 80px;
-	width: 400px;
+	min-width: 400px;
 	background-color: $darkBlueSpecial;
 	color: #ffffff;
 	height: 100vh;
