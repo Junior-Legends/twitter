@@ -23,7 +23,13 @@
 	outline: none;
 }
 
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
 // import Scss Module
+@import "../Assets/Font/TwitterFont/style.scss";
 @import "./Color.scss";
 @import "./Home.scss";
 @import "./Login.scss";

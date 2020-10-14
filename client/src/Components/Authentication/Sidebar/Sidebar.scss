@@ -1,0 +1,66 @@
+@import "../../../Scss/Color.scss";
+
+.auth_sidebar {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 0 60px;
+	padding-top: 90px;
+	min-width: 400px;
+	background-color: $darkBlueSpecial;
+	color: #ffffff;
+	height: 100vh;
+
+	.sidebar_app-brand {
+		div {
+			display: flex;
+			align-items: center;
+			margin-bottom: 10px;
+
+			.app-brand_logo {
+				margin-left: 10px;
+			}
+
+			.app-brand_name {
+				font-family: IRANSans_Bold !important;
+			}
+		}
+
+		.sidebar_app-sumarry {
+			color: $grayBlue;
+		}
+	}
+
+	.sideBar_feature {
+		.feature_item {
+			display: flex;
+			align-items: center;
+			padding: 15px 0;
+
+			i {
+				color: $primeryColor;
+				margin-left: 15px;
+				font-size: 28px;
+			}
+
+			span {
+				font-size: 18px;
+			}
+		}
+	}
+	.sideBar_github-page {
+		margin: 0 auto;
+		margin-bottom: 50px;
+		display: flex;
+		align-items: center;
+		background: #192734;
+		color: $grayBlue;
+		padding: 10px 10px 10px 15px;
+		border-radius: 100px;
+
+		i {
+			font-size: 25px;
+			margin-left: 5px;
+		}
+	}
+}

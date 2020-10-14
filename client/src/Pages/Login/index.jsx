@@ -1,7 +1,7 @@
 import React from "react";
 
 // import Main Components
-import Sidebar from "../../Components/Authentication/Sidbar";
+import Sidebar from "../../Components/Authentication/Sidebar";
 import LoginHero from "../../Components/Authentication/LoginHero";
 
 const Login = () => {

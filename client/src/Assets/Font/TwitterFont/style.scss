@@ -1,0 +1,60 @@
+@import "variables";
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?8ltt0c');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?8ltt0c#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?8ltt0c') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?8ltt0c') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?8ltt0c##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-Github {
+  &:before {
+    content: $icon-Github; 
+  }
+}
+.icon-Message {
+  &:before {
+    content: $icon-Message; 
+  }
+}
+.icon-Moon {
+  &:before {
+    content: $icon-Moon; 
+  }
+}
+.icon-Search {
+  &:before {
+    content: $icon-Search; 
+  }
+}
+.icon-Sun {
+  &:before {
+    content: $icon-Sun; 
+  }
+}
+.icon-Users {
+  &:before {
+    content: $icon-Users; 
+  }
+}
+
