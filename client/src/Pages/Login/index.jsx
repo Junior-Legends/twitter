@@ -2,14 +2,14 @@ import React from "react";
 
 // import Main Components
 import Sidebar from "../../Components/Authentication/Sidbar";
-import Hero from "../../Components/Authentication/Hero";
+import LoginHero from "../../Components/Authentication/LoginHero";
 
 const Login = () => {
 	return (
 		<>
 			<div className="login">
 				<Sidebar />
-				<Hero />
+				<LoginHero />
 			</div>
 		</>
 	);

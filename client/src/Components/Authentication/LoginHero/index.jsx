@@ -1,7 +1,7 @@
 import React from "react";
-import "./Hero.scss";
+import "./LoginHero.scss";
 
-const Hero = () => {
+const LoginHero = () => {
 	return (
 		<div className="auth_hero">
 			<h1>Hero</h1>
@@ -9,4 +9,4 @@ const Hero = () => {
 	);
 };
 
-export default Hero;
+export default LoginHero;
