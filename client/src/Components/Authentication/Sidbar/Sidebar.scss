@@ -1,0 +1,30 @@
+@import "../../../Scss/color.scss";
+
+.auth_sidebar {
+	display: flex;
+	flex-direction: column;
+	padding: 0 50px;
+	padding-top: 80px;
+	width: 400px;
+	background-color: $darkBlueSpecial;
+	color: #ffffff;
+	height: 100vh;
+
+	.sidebar_app-brand {
+		display: flex;
+		align-items: center;
+
+		.app-brand_logo {
+			margin-left: 10px;
+		}
+
+		.app-brand_name {
+			font-family: IRANSans_Bold !important;
+		}
+	}
+
+	.sidebar_app-sumarry {
+		color: $grayBlue;
+		margin-top: 10px;
+	}
+}
