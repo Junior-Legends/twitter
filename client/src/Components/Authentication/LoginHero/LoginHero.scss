@@ -1,8 +1,81 @@
 @import "../../../Scss/Color.scss";
 
-.auth_hero {
-	height: 100vh;
-	width: 100%;
+.login_hero {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	background-color: $darkBlue;
-	color: #ffffff;
+	color: $lightBlue;
+	height: 100vh;
+	width: 70%;
+
+	&_entry_wrapper {
+		height: auto;
+		width: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 9em;
+
+		& h4 {
+			margin: 1em 0;
+			// margin-right: 2em;
+			align-self: flex-start;
+			font-size: 1.1em;
+		}
+	}
+
+	&_form {
+		height: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+
+		& input {
+			width: 30em;
+			margin: 1em 0;
+			padding: 12px;
+			border-radius: 10px;
+			border: none;
+			background-color: $darkBlueSpecial;
+		}
+
+		& label {
+			color: $grayBlue;
+		}
+
+		&_submit {
+			background-color: $primeryColor !important;
+			cursor: pointer;
+		}
+	}
+
+	&_register {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		& a {
+			color: $primeryColor;
+			margin: 8px;
+			font-family: IRANSans !important;
+
+			&:hover {
+				color: $lightBlue;
+			}
+		}
+		&_after {
+			position: relative;
+
+			&:after {
+				position: absolute;
+				content: "";
+				bottom: 0;
+				left: -10px;
+				height: 1.6em;
+				border-left: 3px solid $darkBlueSpecial;
+			}
+		}
+	}
 }
