@@ -4,14 +4,22 @@ import "./LoginHero.scss";
 const LoginHero = () => {
 	return (
 		<div className="login_hero">
-			<div className="login_hero_them"></div>
+			<div className="login_hero_theme_switch_wrapper">
+				<label class="theme_switch" for="checkbox">
+					<input type="checkbox" id="checkbox" />
+					<div class="slider round">
+						<i className="icon-Moon"></i>
+						<i className="icon-Sun"></i>
+					</div>
+				</label>
+			</div>
 			<div className="login_hero_entry_wrapper">
 				<h4>ورود به توییتر فارسی</h4>
 				<form className="login_hero_form">
 					<label htmlFor="">ایمیل یا نام کاربری</label>
 					<input type="text" />
 					<label htmlFor="">رمز عبور</label>
-					<input type="text" />
+					<input type="password" />
 					<input
 						type="submit"
 						value="ورود"

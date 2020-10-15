@@ -2,6 +2,7 @@
 
 .login_hero {
 	display: flex;
+	position: relative;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
@@ -9,6 +10,71 @@
 	color: $lightBlue;
 	height: 100vh;
 	width: 70%;
+
+	&_theme_switch_wrapper {
+		display: flex;
+		position: absolute;
+		align-items: center;
+		left: 5rem;
+		top: 4rem;
+	}
+	.theme_switch {
+		display: inline-block;
+		height: 1.7rem;
+		position: relative;
+		width: 3.1rem;
+	}
+
+	.theme_switch input {
+		display: none;
+	}
+
+	.slider {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		cursor: pointer;
+		background-color: $darkBlueSpecial;
+		bottom: 0;
+		left: -2px;
+		right: 2px;
+		top: 0;
+		transition: 0.4s;
+
+		& i {
+			z-index: 2;
+			font-size: 1em;
+		}
+	}
+
+	.slider:before {
+		background-color: $primeryColor;
+		bottom: 2px;
+		top: 2px;
+		content: "";
+		height: 1.4rem;
+		left: 2px;
+		position: absolute;
+		transition: 0.4s;
+		width: 1.35rem;
+	}
+
+	input:checked + .slider {
+		background-color: $darkBlueSpecial;
+	}
+
+	input:checked + .slider:before {
+		transform: translateX(1.5rem);
+	}
+
+	.slider.round {
+		border-radius: 2.2rem;
+	}
+
+	.slider.round:before {
+		border-radius: 50%;
+	}
 
 	&_entry_wrapper {
 		height: auto;
@@ -24,6 +90,7 @@
 			// margin-right: 2em;
 			align-self: flex-start;
 			font-size: 1.1em;
+			color: $lightBlue;
 		}
 	}
 
@@ -36,10 +103,13 @@
 		& input {
 			width: 30em;
 			margin: 1em 0;
-			padding: 12px;
-			border-radius: 10px;
+			padding: 0.8rem;
+			border-radius: 0.5rem;
 			border: none;
 			background-color: $darkBlueSpecial;
+			color: $lightBlue;
+			font-size: 1em;
+			direction: ltr;
 		}
 
 		& label {
@@ -48,6 +118,8 @@
 
 		&_submit {
 			background-color: $primeryColor !important;
+			color: $lightBlue;
+			font-weight: bold;
 			cursor: pointer;
 		}
 	}
@@ -58,7 +130,7 @@
 		align-items: center;
 		& a {
 			color: $primeryColor;
-			margin: 8px;
+			margin: 0.5rem;
 			font-family: IRANSans !important;
 
 			&:hover {
@@ -72,8 +144,8 @@
 				position: absolute;
 				content: "";
 				bottom: 0;
-				left: -10px;
-				height: 1.6em;
+				left: -0.6rem;
+				height: 1.5rem;
 				border-left: 3px solid $darkBlueSpecial;
 			}
 		}
