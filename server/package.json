@@ -5,6 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"dev": "nodemon src/server.js",
+		"cm": "cz",
 		"format": "prettier --write \"./**/*.{js,json}\"",
 		"lint": "eslint \"./**/*.js\"",
 		"lint:fix": "eslint \"./**/*.js\" --quiet --fix"
@@ -28,7 +29,10 @@
 		"morgan": "1.10.0"
 	},
 	"devDependencies": {
+		"@commitlint/cli": "false11.0.0",
 		"@commitlint/config-conventional": "9.1.1",
+		"@commitlint/prompt": "false11.0.0",
+		"commitizen": "false4.2.1",
 		"commitlint": "9.1.0",
 		"eslint": "7.2.0",
 		"eslint-config-airbnb-base": "14.2.0",
@@ -39,6 +43,11 @@
 		"lint-staged": "10.2.11",
 		"nodemon": "2.0.4",
 		"prettier": "2.0.5"
+	},
+	"config": {
+		"commitizen": {
+			"path": "@commitlint/prompt"
+		}
 	},
 	"husky": {
 		"hooks": {
