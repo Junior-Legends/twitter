@@ -17,63 +17,62 @@
 		align-items: center;
 		left: 5rem;
 		top: 4rem;
-	}
-	.theme_switch {
-		display: inline-block;
-		height: 1.7rem;
-		position: relative;
-		width: 3.1rem;
-	}
 
-	.theme_switch input {
-		display: none;
-	}
-
-	.slider {
-		position: absolute;
-		display: flex;
-		align-items: center;
-		justify-content: space-around;
-		cursor: pointer;
-		background-color: $darkBlueSpecial;
-		bottom: 0;
-		left: -2px;
-		right: 2px;
-		top: 0;
-		transition: 0.4s;
-
-		& i {
-			z-index: 2;
-			font-size: 1em;
+		input {
+			display: none;
 		}
-	}
 
-	.slider:before {
-		background-color: $primeryColor;
-		bottom: 2px;
-		top: 2px;
-		content: "";
-		height: 1.4rem;
-		left: 2px;
-		position: absolute;
-		transition: 0.4s;
-		width: 1.35rem;
-	}
+		input:checked + .theme_switch {
+			.round {
+				transform: translateX(2.1em);
+			}
 
-	input:checked + .slider {
-		background-color: $darkBlueSpecial;
-	}
+			.icon-Sun {
+				color: $grayBlue;
+			}
 
-	input:checked + .slider:before {
-		transform: translateX(1.5rem);
-	}
+			.icon-Moon {
+				color: #ffffff;
+			}
+		}
 
-	.slider.round {
-		border-radius: 2.2rem;
-	}
+		.theme_switch {
+			display: flex;
+			height: 2.6rem;
+			width: 5rem;
+			border-radius: 100px;
+			align-items: center;
+			justify-content: space-between;
+			background-color: $darkBlueSpecial;
+			position: relative;
+			padding: 5px 15px;
+			cursor: pointer;
 
-	.slider.round:before {
-		border-radius: 50%;
+			i {
+				z-index: 2;
+				font-size: 1em;
+				transition: color 0.5s;
+
+				&.icon-Moon {
+					color: $grayBlue;
+				}
+
+				&.icon-Sun {
+					color: #ffffff;
+				}
+			}
+
+			.round {
+				height: 1.8rem;
+				width: 1.8rem;
+				background-color: $primeryColor;
+				position: absolute;
+				border-radius: 100px;
+				top: 0.4em;
+				left: 0.5em;
+				transition: transform 0.2s linear;
+			}
+		}
 	}
 
 	&_entry_wrapper {

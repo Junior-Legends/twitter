@@ -5,12 +5,11 @@ const LoginHero = () => {
 	return (
 		<div className="login_hero">
 			<div className="login_hero_theme_switch_wrapper">
-				<label class="theme_switch" for="checkbox">
-					<input type="checkbox" id="checkbox" />
-					<div class="slider round">
-						<i className="icon-Moon"></i>
-						<i className="icon-Sun"></i>
-					</div>
+				<input defaultChecked type="checkbox" id="checkbox" />
+				<label className="theme_switch" htmlFor="checkbox">
+					<i className="icon-Moon"></i>
+					<i className="icon-Sun"></i>
+					<div className="round"></div>
 				</label>
 			</div>
 			<div className="login_hero_entry_wrapper">
