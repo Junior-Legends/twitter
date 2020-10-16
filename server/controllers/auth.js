@@ -10,9 +10,9 @@ exports.register = async (req, res) => {
 	const validationResult = registerValidator(req.body);
 	if (validationResult !== true)
 		return res.status(400).json({ message: validationResult });
-	let { email, password } = req.body;
+	let { password } = req.body;
 	password = await bcrypt.hash(password, 12);
-	const user = await User.create({ email, password });
+	const user = await User.create({ ...req.body, password });
 	res.status(201).json({ user: _.omit(user.toObject(), sensitiveData) });
 	req.session.userId = user._id;
 };
