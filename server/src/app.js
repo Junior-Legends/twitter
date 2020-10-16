@@ -5,8 +5,9 @@ const { sessionConfig } = require('./config');
 const authRoutes = require('./routes/auth');
 
 const app = express();
+const expressSessionConfig = sessionConfig.expressSession;
 
-app.use(expressSession(sessionConfig));
+app.use(expressSession(expressSessionConfig));
 
 app.use('/api/v1/auth', authRoutes);
 

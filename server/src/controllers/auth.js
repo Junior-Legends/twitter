@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const _ = require('lodash');
 
 const User = require('../models/User');
@@ -13,8 +13,9 @@ exports.register = async (req, res) => {
 	let { password } = req.body;
 	password = await bcrypt.hash(password, 12);
 	const user = await User.create({ ...req.body, password });
-	res.status(201).json({ user: _.omit(user.toObject(), sensitiveData) });
 	req.session.userId = user._id;
+
+	return res.status(201).json({ user: _.omit(user.toObject(), sensitiveData) });
 };
 
 exports.login = async (req, res) => {
@@ -29,5 +30,6 @@ exports.login = async (req, res) => {
 	if (!isPasswordCorrect)
 		return res.status(401).json({ message: 'user password is not correct.' });
 	req.session.userId = user._id;
-	res.json({ user: _.omit(user.toObject(), sensitiveData) });
+
+	return res.json({ user: _.omit(user.toObject(), sensitiveData) });
 };
