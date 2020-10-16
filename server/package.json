@@ -4,7 +4,10 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"dev": "nodemon server.js"
+		"dev": "nodemon src/server.js",
+		"format": "prettier --write \"./**/*.{js,json}\"",
+		"lint": "eslint \"./**/*.js\"",
+		"lint:fix": "eslint \"./**/*.js\" --quiet --fix"
 	},
 	"keywords": [
 		"twitter",
@@ -13,14 +16,38 @@
 	"author": "",
 	"license": "MIT",
 	"dependencies": {
-		"bcrypt": "^5.0.0",
-		"dotenv": "^8.2.0",
-		"express": "^4.17.1",
-		"express-session": "^1.17.1",
-		"fastest-validator": "^1.7.0",
-		"mongoose": "^5.10.9"
+		"bcryptjs": "false2.4.3",
+		"body-parser": "1.19.0",
+		"dotenv": "8.2.0",
+		"express": "4.17.1",
+		"express-session": "1.17.1",
+		"fastest-validator": "1.7.0",
+		"helmet": "3.23.3",
+		"lodash": "false4.17.20",
+		"mongoose": "5.10.9",
+		"morgan": "1.10.0"
 	},
 	"devDependencies": {
-		"nodemon": "^2.0.4"
+		"@commitlint/config-conventional": "9.1.1",
+		"commitlint": "9.1.0",
+		"eslint": "7.2.0",
+		"eslint-config-airbnb-base": "14.2.0",
+		"eslint-config-prettier": "6.11.0",
+		"eslint-plugin-import": "2.21.2",
+		"eslint-plugin-prettier": "3.1.4",
+		"husky": "4.2.5",
+		"lint-staged": "10.2.11",
+		"nodemon": "2.0.4",
+		"prettier": "2.0.5"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged",
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+		}
+	},
+	"lint-staged": {
+		"*.{js,json}": "yarn format",
+		"*.js": "yarn lint:fix"
 	}
 }
