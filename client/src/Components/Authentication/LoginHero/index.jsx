@@ -26,7 +26,7 @@ const LoginHero = () => {
 					/>
 				</form>
 				<div className="login_hero_register">
-					<a href="" className="login_hero_register_after">
+					<a href="/register" className="login_hero_register_after">
 						هنوز عضو نشدی؟ ثبت نام
 					</a>
 					<a href="">رمز عبور را فراموش کردم</a>
