@@ -17,62 +17,6 @@
 		align-items: center;
 		left: 5rem;
 		top: 4rem;
-
-		input {
-			display: none;
-		}
-
-		input:checked + .theme_switch {
-			.round {
-				transform: translateX(2.1em);
-			}
-
-			.icon-Sun {
-				color: $grayBlue;
-			}
-
-			.icon-Moon {
-				color: #ffffff;
-			}
-		}
-
-		.theme_switch {
-			display: flex;
-			height: 2.6rem;
-			width: 5rem;
-			border-radius: 100px;
-			align-items: center;
-			justify-content: space-between;
-			background-color: $darkBlueSpecial;
-			position: relative;
-			padding: 5px 15px;
-			cursor: pointer;
-
-			i {
-				z-index: 2;
-				font-size: 1em;
-				transition: color 0.5s;
-
-				&.icon-Moon {
-					color: $grayBlue;
-				}
-
-				&.icon-Sun {
-					color: #ffffff;
-				}
-			}
-
-			.round {
-				height: 1.8rem;
-				width: 1.8rem;
-				background-color: $primeryColor;
-				position: absolute;
-				border-radius: 100px;
-				top: 0.4em;
-				left: 0.5em;
-				transition: transform 0.2s linear;
-			}
-		}
 	}
 
 	&_entry_wrapper {

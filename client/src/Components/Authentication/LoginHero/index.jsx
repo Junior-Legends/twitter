@@ -1,16 +1,12 @@
 import React from "react";
 import "./LoginHero.scss";
+import ThemeSwitchButton from "../../ThemeSwitchButton";
 
 const LoginHero = () => {
 	return (
 		<div className="login_hero">
 			<div className="login_hero_theme_switch_wrapper">
-				<input defaultChecked type="checkbox" id="checkbox" />
-				<label className="theme_switch" htmlFor="checkbox">
-					<i className="icon-Moon"></i>
-					<i className="icon-Sun"></i>
-					<div className="round"></div>
-				</label>
+				<ThemeSwitchButton />
 			</div>
 			<div className="login_hero_entry_wrapper">
 				<h4>ورود به توییتر فارسی</h4>
