@@ -1,6 +1,7 @@
 import React from "react";
 import "./registerHero.scss";
 import ThemeSwitchButton from "../../ThemeSwitchButton";
+import { Link } from "react-router-dom";
 
 const RegisterHero = () => {
 	return (
@@ -33,9 +34,9 @@ const RegisterHero = () => {
 					/>
 				</form>
 				<div className="register_hero_login">
-					<a href="/login" className="register_hero_login_after">
+					<Link to="/login" className="register_hero_login_after">
 						قبلا عضو شده اید؟ ورود
-					</a>
+					</Link>
 				</div>
 			</div>
 		</div>
