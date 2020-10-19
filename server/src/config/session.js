@@ -2,7 +2,7 @@ const { IS_PRODUCTION } = require('./project');
 
 const sessionConfig = {
 	expressSession: {
-		name: process.env.SESSION_MAX_AGE || 'jl.sid',
+		name: process.env.SESSION_NAME || 'jl.sid',
 		secret: process.env.SESSION_SECRET,
 		resave: false,
 		saveUninitialized: false,
