@@ -6,9 +6,9 @@ const registerValidator = require('../validators/register');
 const { dbRecordSensitiveData } = require('../config');
 const loginValidator = require('../validators/login');
 const ResponseError = require('../utils/responseError');
+const asyncCatch = require('../utils/asyncCatch');
 
-console.log(ResponseError);
-exports.register = async (req, res, next) => {
+exports.register = asyncCatch(async (req, res, next) => {
 	const userData = req.body;
 	const validationErrors = registerValidator(userData);
 	if (validationErrors.length > 0) {
@@ -29,19 +29,16 @@ exports.register = async (req, res, next) => {
 	const user = await User.create({ ...userData, password: hash });
 	req.session.userId = user._id;
 
-	return res
-		.status(201)
-		.json({ user: _.omit(user.toObject(), dbRecordSensitiveData) });
-};
+	return res.json({ user: _.omit(user.toObject(), dbRecordSensitiveData) });
+});
 
-exports.login = async (req, res, next) => {
+exports.login = asyncCatch(async (req, res, next) => {
 	const userData = req.body;
 	const validationErrors = loginValidator(userData);
 	if (validationErrors.length > 0) {
 		const error = new ResponseError(validationErrors[0].message, 401);
 		return next(error);
 	}
-	console.log(userData);
 	const { email, password } = userData;
 	const user = await User.findOne({ email });
 	if (!user) {
@@ -56,4 +53,4 @@ exports.login = async (req, res, next) => {
 	req.session.userId = user._id;
 
 	return res.json({ user: _.omit(user.toObject(), dbRecordSensitiveData) });
-};
+});
