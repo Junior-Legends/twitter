@@ -21,7 +21,6 @@ const LoginHero = () => {
 					<label htmlFor="">ایمیل یا نام کاربری</label>
 					<input
 						type="text"
-						placeholder="Email"
 						name="Email"
 						ref={register({
 							required: true,
@@ -33,7 +32,7 @@ const LoginHero = () => {
 					<label htmlFor="">رمز عبور</label>
 					<input
 						type="password"
-						placeholder="password"
+						// placeholder="password"
 						name="password"
 						ref={register({
 							required: true,

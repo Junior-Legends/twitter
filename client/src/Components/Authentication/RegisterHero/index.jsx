@@ -21,7 +21,6 @@ const RegisterHero = () => {
 					<label htmlFor="">نام</label>
 					<input
 						type="text"
-						placeholder="name"
 						name="name"
 						ref={register({
 							required: true,
@@ -31,7 +30,6 @@ const RegisterHero = () => {
 					<label htmlFor="">ایمیل</label>
 					<input
 						type="text"
-						placeholder="Email"
 						name="Email"
 						ref={register({
 							required: true,
@@ -46,7 +44,6 @@ const RegisterHero = () => {
 							<label htmlFor="">رمز عبور</label>
 							<input
 								type="password"
-								placeholder="password"
 								name="password"
 								ref={register({
 									required: true,
