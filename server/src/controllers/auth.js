@@ -3,33 +3,54 @@ const _ = require('lodash');
 
 const User = require('../models/User');
 const registerValidator = require('../validators/register');
-const { sensitiveData } = require('../config');
+const { dbRecordSensitiveData } = require('../config');
 const loginValidator = require('../validators/login');
+const ResponseError = require('../utils/responseError');
+const asyncCatch = require('../utils/asyncCatch');
 
-exports.register = async (req, res) => {
-	const validationResult = registerValidator(req.body);
-	if (validationResult !== true)
-		return res.status(400).json({ message: validationResult });
-	let { password } = req.body;
-	password = await bcrypt.hash(password, 12);
-	const user = await User.create({ ...req.body, password });
+exports.register = asyncCatch(async (req, res, next) => {
+	const userData = req.body;
+	const validationErrors = registerValidator(userData);
+	if (validationErrors.length > 0) {
+		const error = new ResponseError(validationErrors[0].message, 401);
+		return next(error);
+	}
+	console.log(userData);
+	const { password, email } = userData;
+	const userExists = await User.findOne({ email });
+	if (userExists) {
+		const error = new ResponseError(
+			'there is already a user with this email',
+			409
+		);
+		return next(error);
+	}
+	const hash = await bcrypt.hash(password, 12);
+	const user = await User.create({ ...userData, password: hash });
 	req.session.userId = user._id;
 
-	return res.status(201).json({ user: _.omit(user.toObject(), sensitiveData) });
-};
+	return res.json({ user: _.omit(user.toObject(), dbRecordSensitiveData) });
+});
 
-exports.login = async (req, res) => {
-	const validationResult = loginValidator(req.body);
-	if (validationResult !== true)
-		return res.status(400).json({ message: validationResult });
-	const { email = '', password = '' } = req.body;
+exports.login = asyncCatch(async (req, res, next) => {
+	const userData = req.body;
+	const validationErrors = loginValidator(userData);
+	if (validationErrors.length > 0) {
+		const error = new ResponseError(validationErrors[0].message, 401);
+		return next(error);
+	}
+	const { email, password } = userData;
 	const user = await User.findOne({ email });
-	if (!user)
-		return res.status(404).json({ message: 'no user found with this email.' });
+	if (!user) {
+		const error = new ResponseError('no user found with this email.', 404);
+		return next(error);
+	}
 	const isPasswordCorrect = await bcrypt.compare(password, user.password);
-	if (!isPasswordCorrect)
-		return res.status(401).json({ message: 'user password is not correct.' });
+	if (!isPasswordCorrect) {
+		const error = new ResponseError('user password is not correct.', 401);
+		return next(error);
+	}
 	req.session.userId = user._id;
 
-	return res.json({ user: _.omit(user.toObject(), sensitiveData) });
-};
+	return res.json({ user: _.omit(user.toObject(), dbRecordSensitiveData) });
+});

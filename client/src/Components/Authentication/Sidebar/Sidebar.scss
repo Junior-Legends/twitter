@@ -1,5 +1,3 @@
-@import "../../../Scss/Color.scss";
-
 .auth_sidebar {
 	display: flex;
 	flex-direction: column;
@@ -7,8 +5,8 @@
 	padding: 0 60px;
 	padding-top: 90px;
 	width: 40%;
-	background-color: $darkBlueSpecial;
-	color: #ffffff;
+	background-color: var(--secondary-bg);
+	color: var(--text-color);
 	height: 100vh;
 
 	.sidebar_app-brand {
@@ -19,6 +17,9 @@
 
 			.app-brand_logo {
 				margin-left: 10px;
+				path {
+					fill: var(--primery-color);
+				}
 			}
 
 			.app-brand_name {
@@ -27,7 +28,7 @@
 		}
 
 		.sidebar_app-sumarry {
-			color: $grayBlue;
+			color: var(--gray-color);
 		}
 	}
 
@@ -38,7 +39,7 @@
 			padding: 15px 0;
 
 			i {
-				color: $primeryColor;
+				color: var(--primery-color);
 				margin-left: 15px;
 				font-size: 28px;
 			}
@@ -53,8 +54,8 @@
 		margin-bottom: 50px;
 		display: flex;
 		align-items: center;
-		background: #192734;
-		color: $grayBlue;
+		background: var(--bg);
+		color: var(--gray-color);
 		padding: 10px 10px 10px 15px;
 		border-radius: 100px;
 

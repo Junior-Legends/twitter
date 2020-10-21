@@ -1,5 +1,15 @@
-$primeryColor: #1da1f3;
-$lightBlue: #e4e9f2;
-$darkBlue: #16202a;
-$darkBlueSpecial: #202f3f;
-$grayBlue: #8898a5;
+[data-scheme="dark"] {
+	--primery-color: #1da1f3;
+	--bg: #16202a;
+	--secondary-bg: #202f3f;
+	--gray-color: #8898a5;
+	--text-color: #ffffff;
+}
+
+[data-scheme="light"] {
+	--primery-color: #1da1f3;
+	--bg: #ffffff;
+	--secondary-bg: #e4e9f2;
+	--gray-color: #616e78;
+	--text-color: #16202a;
+}

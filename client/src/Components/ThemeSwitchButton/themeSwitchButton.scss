@@ -1,5 +1,3 @@
-@import "../../Scss/Color.scss";
-
 .theme_switch_button {
 	& input {
 		display: none;
@@ -11,7 +9,7 @@
 		}
 
 		.icon-Sun {
-			color: $grayBlue;
+			color: var(--gray-color);
 		}
 
 		.icon-Moon {
@@ -26,7 +24,7 @@
 		border-radius: 100px;
 		align-items: center;
 		justify-content: space-between;
-		background-color: $darkBlueSpecial;
+		background-color: var(--secondary-bg);
 		position: relative;
 		padding: 5px 15px;
 		cursor: pointer;
@@ -37,7 +35,7 @@
 			transition: color 0.5s;
 
 			&.icon-Moon {
-				color: $grayBlue;
+				color: var(--gray-color);
 			}
 
 			&.icon-Sun {
@@ -48,7 +46,7 @@
 		& .round {
 			height: 1.8rem;
 			width: 1.8rem;
-			background-color: $primeryColor;
+			background-color: var(--primery-color);
 			position: absolute;
 			border-radius: 100px;
 			top: 0.4em;
