@@ -8,22 +8,16 @@ const loginValidator = require('../validators/login');
 const ResponseError = require('../utils/responseError');
 const asyncCatch = require('../utils/asyncCatch');
 
-exports.register = asyncCatch(async (req, res, next) => {
+exports.register = asyncCatch(async (req, res) => {
 	const userData = req.body;
 	const validationErrors = registerValidator(userData);
 	if (validationErrors.length > 0) {
-		const error = new ResponseError(validationErrors[0].message, 401);
-		return next(error);
+		throw new ResponseError(validationErrors[0].message, 401);
 	}
-	console.log(userData);
 	const { password, email } = userData;
 	const userExists = await User.findOne({ email });
 	if (userExists) {
-		const error = new ResponseError(
-			'there is already a user with this email',
-			409
-		);
-		return next(error);
+		throw new ResponseError('there is already a user with this email', 409);
 	}
 	const hash = await bcrypt.hash(password, 12);
 	const user = await User.create({ ...userData, password: hash });
@@ -32,23 +26,20 @@ exports.register = asyncCatch(async (req, res, next) => {
 	return res.json({ user: _.omit(user.toObject(), dbRecordSensitiveData) });
 });
 
-exports.login = asyncCatch(async (req, res, next) => {
+exports.login = asyncCatch(async (req, res) => {
 	const userData = req.body;
 	const validationErrors = loginValidator(userData);
 	if (validationErrors.length > 0) {
-		const error = new ResponseError(validationErrors[0].message, 401);
-		return next(error);
+		throw new ResponseError(validationErrors[0].message, 401);
 	}
 	const { email, password } = userData;
 	const user = await User.findOne({ email });
 	if (!user) {
-		const error = new ResponseError('no user found with this email.', 404);
-		return next(error);
+		throw new ResponseError('no user found with this email.', 404);
 	}
 	const isPasswordCorrect = await bcrypt.compare(password, user.password);
 	if (!isPasswordCorrect) {
-		const error = new ResponseError('user password is not correct.', 401);
-		return next(error);
+		throw new ResponseError('user password is not correct.', 401);
 	}
 	req.session.userId = user._id;
 
