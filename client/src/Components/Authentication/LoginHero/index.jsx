@@ -23,7 +23,12 @@ const LoginHero = () => {
 						type="text"
 						placeholder="Email"
 						name="Email"
-						ref={register({ required: true, pattern: /^\S+@\S+$/i })}
+						ref={register({
+							required: true,
+							pattern: /^\S+@\S+$/i,
+							max: 300,
+							min: 4
+						})}
 					/>
 					<label htmlFor="">رمز عبور</label>
 					<input
@@ -47,10 +52,7 @@ const LoginHero = () => {
 					{errors.Email && <p>ایمیل را درست وارد کنید</p>}
 					{errors.password && <p>پسورد را درست وارد کنید لطفا</p>}
 					{errors.password && (
-						<p>
-							پسورد باید شامل حروف بزرگ و کوچک ، عدد و حداقل 6
-							کاراکتر باشد
-						</p>
+						<p>پسورد باید شامل حروف بزرگ و کوچک ، عدد و حداقل 6 کاراکتر باشد</p>
 					)}
 				</form>
 				<div className="login_hero_register">
