@@ -4,7 +4,9 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"dev": "nodemon src/server.js",
+		"build": "tsc --project ./",
+		"start": "yarn build && node dist/server.js",
+		"dev": "nodemon src/server.ts",
 		"cm": "cz",
 		"format": "prettier --write \"./**/*.{ts,js,json}\"",
 		"lint": "eslint \"./**/*.{ts,js}\"",
@@ -53,6 +55,7 @@
 		"lint-staged": "10.2.11",
 		"nodemon": "2.0.4",
 		"prettier": "2.0.5",
+		"ts-node": "9.0.0",
 		"typescript": "4.0.3"
 	},
 	"config": {
