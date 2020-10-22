@@ -1,17 +1,18 @@
-const bcrypt = require('bcryptjs');
-const _ = require('lodash');
+import bcrypt from 'bcryptjs';
+import _ from 'lodash';
+import { Request, Response } from 'express';
 
-const User = require('../models/User');
-const registerValidator = require('../validators/register');
-const { dbRecordSensitiveData } = require('../config');
-const loginValidator = require('../validators/login');
-const ResponseError = require('../utils/responseError');
-const asyncCatch = require('../utils/asyncCatch');
+import User from '../models/User';
+import registerValidator from '../validators/register';
+import { dbAdditionalDocFields } from '../config';
+import loginValidator from '../validators/login';
+import ResponseError from '../utils/responseError';
+import asyncCatch from '../utils/asyncCatch';
 
-exports.register = asyncCatch(async (req, res) => {
+const register = asyncCatch(async (req: Request, res: Response) => {
 	const userData = req.body;
 	const validationErrors = registerValidator(userData);
-	if (validationErrors.length > 0) {
+	if (typeof validationErrors !== 'boolean') {
 		throw new ResponseError(validationErrors[0].message, 401);
 	}
 	const { password, email } = userData;
@@ -23,13 +24,13 @@ exports.register = asyncCatch(async (req, res) => {
 	const user = await User.create({ ...userData, password: hash });
 	req.session.userId = user._id;
 
-	return res.json({ user: _.omit(user.toObject(), dbRecordSensitiveData) });
+	return res.json({ user: _.omit(user.toObject(), dbAdditionalDocFields) });
 });
 
-exports.login = asyncCatch(async (req, res) => {
+const login = asyncCatch(async (req: Request, res: Response) => {
 	const userData = req.body;
 	const validationErrors = loginValidator(userData);
-	if (validationErrors.length > 0) {
+	if (typeof validationErrors !== 'boolean') {
 		throw new ResponseError(validationErrors[0].message, 401);
 	}
 	const { email, password } = userData;
@@ -43,5 +44,7 @@ exports.login = asyncCatch(async (req, res) => {
 	}
 	req.session.userId = user._id;
 
-	return res.json({ user: _.omit(user.toObject(), dbRecordSensitiveData) });
+	return res.json({ user: _.omit(user.toObject(), dbAdditionalDocFields) });
 });
+
+export default { register, login };
