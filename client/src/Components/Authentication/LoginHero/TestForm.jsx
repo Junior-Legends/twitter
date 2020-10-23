@@ -2,11 +2,11 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 export default function TestForm() {
-	const { register, handleSubmit, setError, errors } = useForm({
+	const { register, handleSubmit, errors } = useForm({
 		mode: "onSubmit",
 	});
-	
-	const onSubmit = data => console.log(data);
+
+	const onSubmit = (data) => console.log(data);
 	// console.log(errors);
 
 	return (
@@ -44,6 +44,5 @@ export default function TestForm() {
 			<input type="submit" />
 			{errors.numberInput && <p>اعداد رو بیشتر از 5 انتخاب کنید</p>}
 		</form>
-
 	);
 }
