@@ -1,8 +1,8 @@
-const mongoose = require('mongoose');
-const http = require('http');
+import mongoose from 'mongoose';
+import http from 'http';
 
-const { databaseConfig, serverConfig } = require('./config');
-const app = require('./app');
+import { databaseConfig, serverConfig } from './config';
+import app from './app';
 
 const mongooseConfig = databaseConfig.mongoose;
 const { port, domain } = serverConfig;
@@ -13,7 +13,7 @@ mongoose
 		mongooseConfig.moongooseConnectOptions
 	)
 	.then(() => {
-		console.log(`mongoose connected successfully ✅`);
+		console.log('mongoose connected successfully ✅');
 	})
 	.catch((error) => {
 		console.log('error occurred while connecting to mongodb server ❌');

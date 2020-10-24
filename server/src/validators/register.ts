@@ -1,8 +1,8 @@
-const Validator = require('fastest-validator');
+import Validator, { ValidationSchema } from 'fastest-validator';
 
-const v = new Validator();
+const v: Validator = new Validator();
 
-const schema = {
+const schema: ValidationSchema = {
 	username: { type: 'string', min: 3, max: 300, optional: true },
 	name: { type: 'string', min: 3, max: 300, optional: true },
 	email: { type: 'email', min: 4, max: 300 },
@@ -13,4 +13,4 @@ const schema = {
 
 const checker = v.compile(schema);
 
-module.exports = checker;
+export default checker;
