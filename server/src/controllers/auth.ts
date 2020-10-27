@@ -15,13 +15,12 @@ const register = asyncCatch(async (req: Request, res: Response) => {
 	if (typeof validationErrors !== 'boolean') {
 		throw new ResponseError(validationErrors[0].message, 401);
 	}
-	const { password, email } = userData;
+	const { email } = userData;
 	const userExists = await User.findOne({ email });
 	if (userExists) {
 		throw new ResponseError('there is already a user with this email', 409);
 	}
-	const hash = await bcrypt.hash(password, 12);
-	const user = await User.create({ ...userData, password: hash });
+	const user = await User.create(userData);
 	req.session.userId = user._id;
 
 	return res.json({ user: _.omit(user.toObject(), dbAdditionalDocFields) });
