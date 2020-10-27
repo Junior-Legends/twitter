@@ -1,4 +1,5 @@
 import Validator, { ValidationSchema } from 'fastest-validator';
+import createCustomFastestValidatorWrapper from '../utils/customtValidator';
 
 const v: Validator = new Validator();
 
@@ -10,5 +11,6 @@ const schema: ValidationSchema = {
 };
 
 const checker = v.compile(schema);
+const validator = createCustomFastestValidatorWrapper(checker);
 
-export default checker;
+export default validator;
