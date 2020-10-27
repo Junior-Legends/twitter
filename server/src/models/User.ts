@@ -1,4 +1,5 @@
 import mongoose, { Model, Document } from 'mongoose';
+import MongooseUserSchemaPlugin from '../plugins/mongooseUserSchemaPlugin';
 
 export interface MongooseUserDoc extends Document {
 	name?: string;
@@ -8,7 +9,7 @@ export interface MongooseUserDoc extends Document {
 	role?: string;
 }
 
-const Schema = new mongoose.Schema(
+const UserSchema = new mongoose.Schema(
 	{
 		name: {
 			type: String,
@@ -31,6 +32,8 @@ const Schema = new mongoose.Schema(
 	{ timestamps: true }
 );
 
-const User: Model<MongooseUserDoc> = mongoose.model('User', Schema);
+UserSchema.plugin(MongooseUserSchemaPlugin);
+
+const User: Model<MongooseUserDoc> = mongoose.model('User', UserSchema);
 
 export default User;
