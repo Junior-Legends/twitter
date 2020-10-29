@@ -9,9 +9,13 @@ import authRoutes from './routes/auth';
 const app = express();
 const expressSessionConfig = sessionConfig.expressSession;
 
+app.use(express.json({ limit: '4kb' }));
+app.use(express.urlencoded({ extended: true }));
+
 app.use(expressSession(expressSessionConfig));
 app.use(morgan('dev'));
 app.use(helmet());
+
 app.use('/api/v1/auth', authRoutes);
 
 app.use(errorHandler);
