@@ -1,13 +1,13 @@
 import _ from 'lodash';
 import { Request, Response } from 'express';
 
-import User from '../models/User';
 import { dbAdditionalDocFields } from '../config';
 import registerValidator from '../validators/register';
 import loginValidator from '../validators/login';
 import ResponseError from '../utils/responseError';
 import asyncCatch from '../utils/asyncCatch';
 import bcryptUtils from '../utils/cryptography';
+import { MongooseStore } from '../Store/Store';
 
 const register = asyncCatch(async (req: Request, res: Response) => {
 	const userData = req.body;
@@ -16,15 +16,15 @@ const register = asyncCatch(async (req: Request, res: Response) => {
 		throw new ResponseError(validationError.message, 400);
 	}
 	const { email } = userData;
-	const userExists = await User.findOne({ email });
+	const userExists = await MongooseStore.findOneUser({ email });
 	if (userExists) {
 		throw new ResponseError('there is already a user with this email', 409);
 	}
 
-	const user = await User.create(userData);
+	const user = await MongooseStore.saveUser(userData);
 	req.session.userId = user._id;
 
-	return res.json({ user: _.omit(user.toObject(), dbAdditionalDocFields) });
+	return res.json({ user: _.omit(user, dbAdditionalDocFields) });
 });
 
 const login = asyncCatch(async (req: Request, res: Response) => {
@@ -34,7 +34,7 @@ const login = asyncCatch(async (req: Request, res: Response) => {
 		throw new ResponseError(validationError.message, 400);
 	}
 	const { email, password } = userData;
-	const user = await User.findOne({ email });
+	const user = await MongooseStore.findOneUser({ email });
 	if (!user) {
 		throw new ResponseError('no user found with this email.', 404);
 	}
@@ -48,7 +48,7 @@ const login = asyncCatch(async (req: Request, res: Response) => {
 	}
 	req.session.userId = user._id;
 
-	return res.json({ user: _.omit(user.toObject(), dbAdditionalDocFields) });
+	return res.json({ user: _.omit(user, dbAdditionalDocFields) });
 });
 
 export default { register, login };

@@ -2,7 +2,7 @@
 import bcryptUtils from '../utils/cryptography';
 
 import { Schema } from 'mongoose';
-import { MongooseUserDoc } from '../models/User';
+import { MongooseUserDoc } from '../models/mongooseUserModel';
 
 function MongooseUserSchemaPlugin(schema: Schema): void {
 	schema.pre<MongooseUserDoc>(/^(save|update)/i, async function (
