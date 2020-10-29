@@ -24,7 +24,7 @@ const register = asyncCatch(async (req: Request, res: Response) => {
 	const user = await MongooseStore.saveUser(userData);
 	req.session.userId = user._id;
 
-	return res.json({ user: _.omit(user, dbAdditionalDocFields) });
+	return res.json({ user: _.omit(user.toObject(), dbAdditionalDocFields) });
 });
 
 const login = asyncCatch(async (req: Request, res: Response) => {
@@ -48,7 +48,7 @@ const login = asyncCatch(async (req: Request, res: Response) => {
 	}
 	req.session.userId = user._id;
 
-	return res.json({ user: _.omit(user, dbAdditionalDocFields) });
+	return res.json({ user: _.omit(user.toObject(), dbAdditionalDocFields) });
 });
 
 export default { register, login };
