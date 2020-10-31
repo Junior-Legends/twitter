@@ -17,17 +17,17 @@ const Sidebar = () => {
 
 			<div className="sideBar_feature">
 				<div className="feature_item">
-					<i className="icon-Search"></i>
+					<i className="icon-Search-fill"></i>
 					<span>علاقه مندی هایتان را دنبال کنید.</span>
 				</div>
 				<div className="feature_item">
-					<i className="icon-Users"></i>
+					<i className="icon-Users-fill"></i>
 					<span>
 						از چیزهایی که مردم درباره آن ها صحبت می کنند‌‌‌، خبر دار شوید.
 					</span>
 				</div>
 				<div className="feature_item">
-					<i className="icon-Message"></i>
+					<i className="icon-Message-fill"></i>
 					<span>به گفتگو بپیوندید.</span>
 				</div>
 			</div>
