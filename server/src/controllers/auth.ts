@@ -7,7 +7,7 @@ import loginValidator from '../validators/login';
 import ResponseError from '../utils/responseError';
 import asyncCatch from '../utils/asyncCatch';
 import bcryptUtils from '../utils/cryptography';
-import { MongooseStore } from '../Store/Store';
+import { MongooseStore } from '../store/store';
 
 const register = asyncCatch(async (req: Request, res: Response) => {
 	const userData = req.body;
