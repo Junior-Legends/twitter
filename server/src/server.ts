@@ -8,10 +8,7 @@ const mongooseConfig = databaseConfig.mongoose;
 const { port, domain } = serverConfig;
 
 mongoose
-	.connect(
-		`mongodb://${serverConfig.domain}/${mongooseConfig.dbName}`,
-		mongooseConfig.moongooseConnectOptions
-	)
+	.connect(mongooseConfig.dbUri, mongooseConfig.mongooseConnectOptions)
 	.then(() => {
 		console.log('mongoose connected successfully ✅');
 	})
