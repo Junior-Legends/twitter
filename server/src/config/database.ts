@@ -2,15 +2,15 @@ import { ConnectionOptions } from 'mongoose';
 
 interface DatabaseConfig {
 	mongoose: {
-		dbName: string | undefined;
-		moongooseConnectOptions: ConnectionOptions;
+		dbUri: string | undefined;
+		mongooseConnectOptions: ConnectionOptions;
 	};
 }
 
 const databaseConfig: DatabaseConfig = {
 	mongoose: {
-		dbName: process.env.DB_NAME,
-		moongooseConnectOptions: {
+		dbUri: process.env.DB_URI,
+		mongooseConnectOptions: {
 			useNewUrlParser: true,
 			useCreateIndex: true,
 			useFindAndModify: true,
