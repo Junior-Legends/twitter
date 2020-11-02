@@ -1,24 +1,21 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./themeSwitchButton.scss";
-import { Theme } from "../../context";
+import themes from "../../Constants/Themes";
+import useTheme from "../../Hooks/UseTheme";
+import useToggleTheme from "../../Hooks/UseToggleTheme";
 
 const ThemeSwitchButton = () => {
-	const [theme, setTheme] = useContext(Theme);
-
-	const handleChange = (e) => {
-		const theme = e.target.checked ? "dark" : "light";
-		localStorage.setItem(`theme`, theme);
-		setTheme(localStorage.getItem(`theme`));
-	};
+	const theme = useTheme();
+	const toggleTheme = useToggleTheme();
 
 	return (
 		<>
 			<div className="theme_switch_button">
 				<input
-					defaultChecked={theme === "dark" ? true : false}
+					defaultChecked={theme === themes.dark}
 					type="checkbox"
 					id="checkbox"
-					onChange={handleChange}
+					onChange={toggleTheme}
 				/>
 				<label className="theme_switch" htmlFor="checkbox">
 					<i className="icon-Moon"></i>

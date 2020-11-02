@@ -1,4 +1,4 @@
-import { MongooseUserDoc } from '../models/User';
+import { MongooseUserDoc } from '../models/mongooseUserModel';
 
 type DbAdditionalDocFields = (keyof MongooseUserDoc)[];
 

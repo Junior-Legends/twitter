@@ -1,10 +1,17 @@
 import React from "react";
 
+// import Main Components
+import Header from "../../Components/Header";
+import TimeLine from "../../Components/TimeLine";
+import SideBar from "../../Components/SideBar";
+
 const Home = () => {
 	return (
 		<>
 			<div className="home">
-				<p>به توئیتر فارسی خوش آمدید</p>
+				<SideBar />
+				<TimeLine />
+				<Header />
 			</div>
 		</>
 	);

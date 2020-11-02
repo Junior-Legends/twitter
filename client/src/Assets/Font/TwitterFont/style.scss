@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: '#{$icomoon-font-family}';
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?8ltt0c');
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?8ltt0c#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?8ltt0c') format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?8ltt0c') format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?8ltt0c##{$icomoon-font-family}') format('svg');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?2flkkx');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?2flkkx#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?2flkkx') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?2flkkx') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?2flkkx##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -27,19 +27,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-Github {
+.icon-Verified {
   &:before {
-    content: $icon-Github; 
-  }
-}
-.icon-Message {
-  &:before {
-    content: $icon-Message; 
-  }
-}
-.icon-Moon {
-  &:before {
-    content: $icon-Moon; 
+    content: $icon-Verified; 
   }
 }
 .icon-Search {
@@ -47,14 +37,89 @@
     content: $icon-Search; 
   }
 }
+.icon-Share {
+  &:before {
+    content: $icon-Share; 
+  }
+}
+.icon-Comment {
+  &:before {
+    content: $icon-Comment; 
+  }
+}
+.icon-Retweet {
+  &:before {
+    content: $icon-Retweet; 
+  }
+}
+.icon-Like {
+  &:before {
+    content: $icon-Like; 
+  }
+}
+.icon-Image {
+  &:before {
+    content: $icon-Image; 
+  }
+}
+.icon-Newtweet {
+  &:before {
+    content: $icon-Newtweet; 
+  }
+}
+.icon-Document {
+  &:before {
+    content: $icon-Document; 
+  }
+}
+.icon-Bookmark {
+  &:before {
+    content: $icon-Bookmark; 
+  }
+}
+.icon-Message {
+  &:before {
+    content: $icon-Message; 
+  }
+}
+.icon-Notification {
+  &:before {
+    content: $icon-Notification; 
+  }
+}
+.icon-Home {
+  &:before {
+    content: $icon-Home; 
+  }
+}
 .icon-Sun {
   &:before {
     content: $icon-Sun; 
   }
 }
-.icon-Users {
+.icon-Users-fill {
   &:before {
-    content: $icon-Users; 
+    content: $icon-Users-fill; 
+  }
+}
+.icon-Github {
+  &:before {
+    content: $icon-Github; 
+  }
+}
+.icon-Message-fill {
+  &:before {
+    content: $icon-Message-fill; 
+  }
+}
+.icon-Moon {
+  &:before {
+    content: $icon-Moon; 
+  }
+}
+.icon-Search-fill {
+  &:before {
+    content: $icon-Search-fill; 
   }
 }
 
