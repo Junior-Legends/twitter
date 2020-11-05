@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: '#{$icomoon-font-family}';
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?2flkkx');
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?2flkkx#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?2flkkx') format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?2flkkx') format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?2flkkx##{$icomoon-font-family}') format('svg');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?ob0con');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?ob0con#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?ob0con') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?ob0con') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?ob0con##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -27,6 +27,26 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-Document-fill {
+  &:before {
+    content: $icon-Document-fill; 
+  }
+}
+.icon-Bookmark-fill {
+  &:before {
+    content: $icon-Bookmark-fill; 
+  }
+}
+.icon-Notification-fill {
+  &:before {
+    content: $icon-Notification-fill; 
+  }
+}
+.icon-Home-fill {
+  &:before {
+    content: $icon-Home-fill; 
+  }
+}
 .icon-Verified {
   &:before {
     content: $icon-Verified; 

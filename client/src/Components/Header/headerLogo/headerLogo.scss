@@ -1,0 +1,13 @@
+.header_header-logo {
+	display: flex;
+	align-items: center;
+
+	.header-logo_logo {
+		margin-left: 1rem;
+	}
+
+	.header-logo_name {
+		font-weight: bold;
+		font-size: 1.7em;
+	}
+}
