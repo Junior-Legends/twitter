@@ -1,16 +1,15 @@
-import Validator, { ValidationSchema } from 'fastest-validator';
+import { ValidationSchema } from 'fastest-validator';
 import createCustomFastestValidatorWrapper from '../utils/customtValidator';
-
-const v: Validator = new Validator();
+import validator from './shared/validator';
 
 const schema: ValidationSchema = {
-	username: { type: 'string', min: 3, max: 300, optional: true },
+	username: { type: 'username' },
 	email: { type: 'email' },
-	password: { type: 'string' },
+	password: { type: 'password' },
 	$$strict: 'remove',
 };
 
-const checker = v.compile(schema);
-const validator = createCustomFastestValidatorWrapper(checker);
+const checker = validator.compile(schema);
+const customValidator = createCustomFastestValidatorWrapper(checker);
 
-export default validator;
+export default customValidator;
