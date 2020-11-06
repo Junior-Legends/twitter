@@ -1,5 +1,5 @@
 import mongoose, { Model, Document } from 'mongoose';
-import MongooseUserSchemaPlugin from '../plugins/mongooseUserSchemaPlugin';
+import MongooseUserSchemaPlugin from '../plugins/mongoose/userSchemaPlugin';
 import { User } from './user';
 
 export interface MongooseUserDoc extends Document, User {}
@@ -20,6 +20,12 @@ const UserSchema = new mongoose.Schema(
 		password: {
 			type: String,
 			required: true,
+		},
+		resetPassword: {
+			type: String,
+		},
+		resetPasswordExpiration: {
+			type: Number,
 		},
 		role: {
 			type: String,
