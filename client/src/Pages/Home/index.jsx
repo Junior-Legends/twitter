@@ -9,9 +9,9 @@ const Home = () => {
 	return (
 		<>
 			<div className="home">
-				<SideBar />
-				<TimeLine />
 				<Header />
+				<TimeLine />
+				<SideBar />
 			</div>
 		</>
 	);

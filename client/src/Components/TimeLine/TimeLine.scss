@@ -1,0 +1,81 @@
+.timeline {
+	&_main_wrapper {
+		height: 100%;
+		width: 600px;
+		margin: 0 2.5rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		border-right: 1px solid var(--gray-color);
+		border-left: 1px solid var(--gray-color);
+	}
+
+	&_header {
+		align-self: flex-start;
+		width: 100%;
+		border-bottom: 1px solid var(--gray-color);
+
+		& h3 {
+			margin: 1.1rem;
+			margin-right: 1.5rem;
+		}
+	}
+	&_user {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		margin: 1rem 0 0 0;
+		border-bottom: 1px solid var(--gray-color);
+
+		&_right_elemnets {
+			display: flex;
+			// margin-right: 1rem;
+			padding: 1rem;
+
+			& p {
+				margin: 5px 8px;
+				color: var(--gray-color);
+			}
+		}
+
+		// profileImage is a child  a right_elements in a timleline_user section
+
+		&_profile_image {
+			height: 2.5rem;
+			width: 2.5rem;
+			border-radius: 50%;
+		}
+
+		&_left_elemnets {
+			display: flex;
+			align-items: center;
+			padding: 1rem;
+			margin: 3rem 0 1rem 0.8rem;
+
+			& button {
+				border-radius: 1rem;
+				cursor: pointer;
+				border: none;
+				// font-weight: bold;
+				padding: 7px 28px;
+				color: var(--text-color);
+				background-color: var(--primery-color);
+			}
+			& i {
+				margin: 0 0.7rem;
+				cursor: pointer;
+				font-size: 1.5rem;
+				color: var(--gray-color);
+				&:hover {
+					color: var(--text-color);
+				}
+			}
+		}
+	}
+
+	&_twitts {
+		width: 100%;
+		flex: 3;
+	}
+}

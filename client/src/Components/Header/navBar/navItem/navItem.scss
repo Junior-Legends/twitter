@@ -1,0 +1,35 @@
+.nav-bar_nav-item {
+	display: flex;
+	align-items: center;
+	margin: 0.4rem 0;
+	font-size: 1.2em;
+	color: var(--gray-color);
+	padding: 0.7rem 1rem;
+	border-radius: 100rem;
+	transition: background 0.3s, color 0.3s;
+
+	i[class*="fill"] {
+		display: none;
+	}
+
+	&:hover {
+		background-color: #1da1f31c;
+		color: var(--primery-color);
+	}
+
+	&.active {
+		color: var(--primery-color);
+
+		i {
+			display: none;
+		}
+
+		i[class*="fill"] {
+			display: block;
+		}
+	}
+
+	i {
+		margin-left: 1rem;
+	}
+}

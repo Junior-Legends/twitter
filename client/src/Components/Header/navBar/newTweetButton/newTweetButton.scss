@@ -1,0 +1,14 @@
+.nav-bar_new-tweet {
+	all: unset;
+	display: flex;
+	align-items: center;
+	font-size: 1em;
+	padding: 0.7rem 1rem;
+	border-radius: 100rem;
+	background: var(--primery-color);
+	color: #ffffff;
+	font-weight: bold;
+	justify-content: center;
+	margin-top: 1rem;
+	cursor: pointer;
+}

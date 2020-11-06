@@ -9,7 +9,7 @@ const initPresistTheme = localStorage.getItem("theme");
 export const ThemeProvider = ({ children }) => {
 	const [theme, setTheme] = useState(initPresistTheme || themes.dark);
 	const toggleTheme = () => {
-		setTheme((prevTheme) => {
+		setTheme(prevTheme => {
 			let newTheme = themes.dark;
 
 			if (prevTheme === themes.dark) {

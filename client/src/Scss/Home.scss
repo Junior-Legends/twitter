@@ -1,8 +1,8 @@
 .home {
 	display: flex;
-	justify-content: space-between;
-	padding: 0 200px;
+	justify-content: center;
 	background-color: var(--bg);
 	color: var(--text-color);
-	height: 100vh;
+	min-height: 100vh;
+	scroll-behavior: auto;
 }
