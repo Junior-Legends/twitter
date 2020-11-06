@@ -1,0 +1,29 @@
+@import "../../../Assets/Font/TwitterFont/variables.scss";
+
+.search-box {
+	display: flex;
+	position: relative;
+
+	&_input {
+		all: unset;
+		height: 3rem;
+		padding: 0 1rem;
+		width: 100%;
+		padding-right: 2.5rem;
+		background-color: var(--secondary-bg);
+		border-radius: 100rem;
+		color: var(--text-color);
+
+		&::placeholder {
+			color: var(--gray-color);
+		}
+	}
+	&::before {
+		content: $icon-Search;
+		font-family: "#{$icomoon-font-family}" !important;
+		position: absolute;
+		right: 1rem;
+		top: 1rem;
+		z-index: 999;
+	}
+}

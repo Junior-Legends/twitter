@@ -14,9 +14,15 @@ const TimeLine = () => {
 			pic: hamed,
 			userId: "hamed@",
 			like: 350,
-			image: twitt_pic
+			image: twitt_pic,
 		},
-		{ name: "Hamed", pic: hamed, userId: "hamed@", like: 350, image: twitt_pic }
+		{
+			name: "Hamed",
+			pic: hamed,
+			userId: "hamed@",
+			like: 350,
+			image: twitt_pic,
+		},
 	];
 
 	return (

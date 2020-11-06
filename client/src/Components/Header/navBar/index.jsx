@@ -9,16 +9,16 @@ const NavBar = () => {
 			<NavItem to="/" icon="Home">
 				خانه
 			</NavItem>
-			<NavItem to="/M" icon="Notification">
+			<NavItem to="/notifications" icon="Notification">
 				اعلان ها
 			</NavItem>
-			<NavItem to="/M" icon="Message">
+			<NavItem to="/messages" icon="Message">
 				پیام ها
 			</NavItem>
-			<NavItem to="/M" icon="Bookmark">
+			<NavItem to="/bookmarks" icon="Bookmark">
 				علاقه مندی ها
 			</NavItem>
-			<NavItem to="/M" icon="Document">
+			<NavItem to="/lists" icon="Document">
 				لیست ها
 			</NavItem>
 

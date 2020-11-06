@@ -2,16 +2,17 @@ header {
 	height: 100vh;
 	position: relative;
 	overflow: hidden;
-	width: 300px;
+	display: flex;
+	justify-content: flex-end;
 
 	.header_container {
 		position: fixed;
 		display: flex;
 		padding-top: 3rem;
-		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		height: 100%;
+		width: 220px;
 		padding-bottom: 5rem;
 	}
 }
