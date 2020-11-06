@@ -2,7 +2,7 @@ import { ConnectionOptions } from 'mongoose';
 
 interface DatabaseConfig {
 	mongoose: {
-		dbUri: string | undefined;
+		dbUri: string;
 		mongooseConnectOptions: ConnectionOptions;
 	};
 }
@@ -13,7 +13,7 @@ const databaseConfig: DatabaseConfig = {
 		mongooseConnectOptions: {
 			useNewUrlParser: true,
 			useCreateIndex: true,
-			useFindAndModify: true,
+			useFindAndModify: false,
 			useUnifiedTopology: true,
 		},
 	},
