@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import lodashOmit from 'lodash/omit';
 import { Request, Response } from 'express';
 
 import { dbAdditionalDocFields } from '../../config';
@@ -25,7 +25,9 @@ const restPassword = asyncCatch(async (req: Request, res: Response) => {
 	user.resetPasswordExpiration = null;
 	const newUser = await user.save();
 
-	return res.json({ user: _.omit(newUser.toObject(), dbAdditionalDocFields) });
+	return res.json({
+		user: lodashOmit(newUser.toObject(), dbAdditionalDocFields),
+	});
 });
 
 export default restPassword;

@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import lodashOmit from 'lodash/omit';
 import { Request, Response } from 'express';
 
 import { dbAdditionalDocFields } from '../../config';
@@ -22,7 +22,7 @@ const register = asyncCatch(async (req: Request, res: Response) => {
 	const user = await MongooseUserRepo.create(userData);
 	req.session.userId = user._id;
 
-	return res.json({ user: _.omit(user.toObject(), dbAdditionalDocFields) });
+	return res.json({ user: lodashOmit(user.toObject(), dbAdditionalDocFields) });
 });
 
 export default register;

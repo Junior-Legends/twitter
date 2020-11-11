@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import lodashOmit from 'lodash/omit';
 import { Request, Response } from 'express';
 import { v4 as createUuid } from 'uuid';
 
@@ -47,7 +47,7 @@ const forgotPassword = asyncCatch(async (req: Request, res: Response) => {
 
 	return res.json({
 		uuid,
-		user: _.omit(newUser.toObject(), dbAdditionalDocFields),
+		user: lodashOmit(newUser.toObject(), dbAdditionalDocFields),
 	});
 });
 
