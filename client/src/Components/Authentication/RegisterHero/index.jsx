@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 const RegisterHero = () => {
 	// Handling form with react-hook-form library !
 	const { register, handleSubmit, getValues, errors } = useForm();
-	const onSubmit = data => console.log(data);
+	const onSubmit = (data) => console.log(data);
 	// console.log(errors);
 
 	return (
@@ -20,15 +20,17 @@ const RegisterHero = () => {
 				<form className="register_hero_form" onSubmit={handleSubmit(onSubmit)}>
 					<label htmlFor="">نام</label>
 					<input
+						spellCheck={false}
 						type="text"
 						name="name"
 						ref={register({
 							required: true,
-							pattern: /.{3,300}/i
+							pattern: /.{3,300}/i,
 						})}
 					/>
 					<label htmlFor="">ایمیل</label>
 					<input
+						spellCheck={false}
 						type="text"
 						name="Email"
 						ref={register({
@@ -36,20 +38,21 @@ const RegisterHero = () => {
 							//^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$
 							pattern: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/i,
 							max: 300,
-							min: 4
+							min: 4,
 						})}
 					/>
 					<div className="register_hero_form_password_container">
 						<div>
 							<label htmlFor="">رمز عبور</label>
 							<input
+								spellCheck={false}
 								type="password"
 								name="password"
 								ref={register({
 									required: true,
 									max: 300,
 									min: 6,
-									pattern: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,300}/i
+									pattern: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,300}/i,
 									// "Must contain at least one number and
 									//one uppercase and lowercase letter, and at least 6 or more characters"
 								})}
@@ -58,14 +61,15 @@ const RegisterHero = () => {
 						<div>
 							<label htmlFor="">تکرار رمزعبور</label>
 							<input
-								name="passwordConfirmation"
+								spellCheck={false}
 								type="password"
+								name="passwordConfirmation"
 								ref={register({
 									validate: {
-										passwordEqual: value =>
+										passwordEqual: (value) =>
 											value === getValues().password ||
-											"Password confirmation error!"
-									}
+											"Password confirmation error!",
+									},
 								})}
 							/>
 						</div>

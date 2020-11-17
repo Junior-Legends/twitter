@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 const LoginHero = () => {
 	// Handling form with react-hook-form library !
 	const { register, handleSubmit, errors } = useForm();
-	const onSubmit = data => console.log(data);
+	const onSubmit = (data) => console.log(data);
 	// console.log(errors);
 
 	return (
@@ -20,17 +20,19 @@ const LoginHero = () => {
 				<form className="login_hero_form" onSubmit={handleSubmit(onSubmit)}>
 					<label htmlFor="">ایمیل یا نام کاربری</label>
 					<input
+						spellCheck={false}
 						type="text"
 						name="Email"
 						ref={register({
 							required: true,
 							pattern: /^\S+@\S+$/i,
 							max: 300,
-							min: 4
+							min: 4,
 						})}
 					/>
 					<label htmlFor="">رمز عبور</label>
 					<input
+						spellCheck={false}
 						type="password"
 						// placeholder="password"
 						name="password"
@@ -38,7 +40,7 @@ const LoginHero = () => {
 							required: true,
 							max: 300,
 							min: 6,
-							pattern: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,300}/i
+							pattern: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,300}/i,
 							// "Must contain at least one number and
 							//one uppercase and lowercase letter, and at least 6 or more characters"
 						})}

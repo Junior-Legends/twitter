@@ -5,6 +5,7 @@ const SearchBox = () => {
 	return (
 		<div className="search-box">
 			<input
+				spellCheck={false}
 				type="text"
 				className="search-box_input"
 				placeholder="جستجوی توییتر فارسی"
