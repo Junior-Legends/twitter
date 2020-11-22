@@ -6,7 +6,7 @@ import loginValidator from '../../validators/login';
 import ResponseError from '../../utils/responseError';
 import asyncCatch from '../../utils/asyncCatch';
 import bcryptUtils from '../../utils/cryptography';
-import MongooseUserRepo from '../../repository/mongoose/userRepository';
+import UserRepository from '../../repository/userRepository';
 
 const login = asyncCatch(async (req: Request, res: Response) => {
 	const userData = req.body;
@@ -15,7 +15,7 @@ const login = asyncCatch(async (req: Request, res: Response) => {
 		throw new ResponseError(validationError.message, 400);
 	}
 	const { email, password } = userData;
-	const user = await MongooseUserRepo.findOne({ email });
+	const user = await UserRepository.findOne({ email });
 	if (!user) {
 		throw new ResponseError('no user found with this email.', 404);
 	}

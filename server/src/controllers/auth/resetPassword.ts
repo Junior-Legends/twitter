@@ -5,11 +5,11 @@ import { dbAdditionalDocFields } from '../../config';
 import resetPasswordValidator from '../../validators/resetPassword';
 import ResponseError from '../../utils/responseError';
 import asyncCatch from '../../utils/asyncCatch';
-import MongooseUserRepo from '../../repository/mongoose/userRepository';
+import UserRepository from '../../repository/userRepository';
 
 const restPassword = asyncCatch(async (req: Request, res: Response) => {
 	const resetToken = req.params.token;
-	const user = await MongooseUserRepo.findValidResetPassword(resetToken);
+	const user = await UserRepository.findValidResetPassword(resetToken);
 	if (!user) {
 		throw new ResponseError('reset password not found', 404);
 	}

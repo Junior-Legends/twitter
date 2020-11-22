@@ -3,7 +3,7 @@ import { Request, Response } from 'express';
 import { v4 as createUuid } from 'uuid';
 
 import asyncCatch from '../../utils/asyncCatch';
-import MongooseUserRepo from '../../repository/mongoose/userRepository';
+import UserRepository from '../../repository/userRepository';
 import { NodemailerMailer, nodemailerUtils } from '../../utils/mailing';
 import TimeCalculator from '../../utils/timeUnitsConverter';
 import {
@@ -15,7 +15,7 @@ import ResponseError from '../../utils/responseError';
 
 const forgotPassword = asyncCatch(async (req: Request, res: Response) => {
 	const { email } = req.body;
-	const user = await MongooseUserRepo.findOne({ email });
+	const user = await UserRepository.findOne({ email });
 	if (!user) {
 		throw new ResponseError('no user with the given email exists', 404);
 	}
@@ -40,7 +40,7 @@ const forgotPassword = asyncCatch(async (req: Request, res: Response) => {
 	const twentyMinInMiliSec = TimeCalculator.minToMilisec(1);
 	const nextTwentyMinInMiliSec = Date.now() + twentyMinInMiliSec;
 
-	const newUser = await MongooseUserRepo.updateOne(
+	const newUser = await UserRepository.updateOne(
 		{ email },
 		{ resetPassword: uuid, resetPasswordExpiration: nextTwentyMinInMiliSec }
 	);

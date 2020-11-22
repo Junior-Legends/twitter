@@ -1,7 +1,7 @@
-import UserRepo from '../base/userRepo';
+import UserRepository from './base';
 import UserModel, { MongooseUserDoc } from '../../models/mongooseUserModel';
 
-const MongooseUserRepo: UserRepo<MongooseUserDoc> = {
+const MongooseUserRepo: UserRepository<MongooseUserDoc> = {
 	async create(userData) {
 		const createdUser = UserModel.create(userData);
 		return createdUser;

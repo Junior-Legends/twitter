@@ -5,7 +5,7 @@ import { dbAdditionalDocFields } from '../../config';
 import registerValidator from '../../validators/register';
 import ResponseError from '../../utils/responseError';
 import asyncCatch from '../../utils/asyncCatch';
-import MongooseUserRepo from '../../repository/mongoose/userRepository';
+import UserRepository from '../../repository/userRepository';
 
 const register = asyncCatch(async (req: Request, res: Response) => {
 	const userData = req.body;
@@ -14,12 +14,12 @@ const register = asyncCatch(async (req: Request, res: Response) => {
 		throw new ResponseError(validationError.message, 400);
 	}
 	const { email } = userData;
-	const userExists = await MongooseUserRepo.findOne({ email });
+	const userExists = await UserRepository.findOne({ email });
 	if (userExists) {
 		throw new ResponseError('there is already a user with this email', 409);
 	}
 
-	const user = await MongooseUserRepo.create(userData);
+	const user = await UserRepository.create(userData);
 	req.session.userId = user._id;
 
 	return res.json({ user: lodashOmit(user.toObject(), dbAdditionalDocFields) });
