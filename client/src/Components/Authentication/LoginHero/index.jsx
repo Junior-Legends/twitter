@@ -3,13 +3,14 @@ import "./LoginHero.scss";
 import ThemeSwitchButton from "../../ThemeSwitchButton";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import ValidationErrorMessage from "../../../ValidationErrorMessage";
 
 const LoginHero = () => {
-	// Handling form with react-hook-form library !
-	const { register, handleSubmit, errors } = useForm();
+	const { register, handleSubmit, errors } = useForm({
+		mode: "onSubmit",
+		reValidateMode: "onSubmit",
+	});
 	const onSubmit = (data) => console.log(data);
-	// console.log(errors);
-
 	return (
 		<div className="login_hero">
 			<div className="login_hero_theme_switch_wrapper">
@@ -20,21 +21,33 @@ const LoginHero = () => {
 				<form className="login_hero_form" onSubmit={handleSubmit(onSubmit)}>
 					<label htmlFor="">ایمیل یا نام کاربری</label>
 					<input
+						className="login_hero_form_input"
 						spellCheck={false}
 						type="text"
-						name="Email"
+						name="emailOrUsername"
 						ref={register({
-							required: true,
-							pattern: /^\S+@\S+$/i,
-							max: 300,
-							min: 4,
+							required: "ایمیل یا نام کاربری الزامی است",
+							//^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$
+							validate: (value) => {
+								const isEmail = value.includes("@");
+								if (isEmail) {
+									return (
+										value.match(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,300}/i) ||
+										"ایمیل معتبر نمیباشد"
+									);
+								}
+								return (
+									value.match(/.{3,300}/i) ||
+									"نام کاربری باید بیشتر از 3 کاراکتر باشد"
+								);
+							},
 						})}
 					/>
 					<label htmlFor="">رمز عبور</label>
-					<input
+					{/* <input
+					className="login_hero_form_input"
 						spellCheck={false}
 						type="password"
-						// placeholder="password"
 						name="password"
 						ref={register({
 							required: true,
@@ -44,17 +57,23 @@ const LoginHero = () => {
 							// "Must contain at least one number and
 							//one uppercase and lowercase letter, and at least 6 or more characters"
 						})}
+					/> */}
+					<input
+						className="login_hero_form_input"
+						spellCheck={false}
+						type="password"
+						name="password"
+						ref={register({
+							required: "رمز عبور الزامی است",
+						})}
 					/>
+					<ValidationErrorMessage errors={Object.values(errors)} />
+
 					<input
 						type="submit"
 						value="ورود"
 						className="login_hero_form_submit"
 					/>
-					{errors.Email && <p>ایمیل را درست وارد کنید</p>}
-					{errors.password && <p>پسورد را درست وارد کنید لطفا</p>}
-					{errors.password && (
-						<p>پسورد باید شامل حروف بزرگ و کوچک ، عدد و حداقل 6 کاراکتر باشد</p>
-					)}
 				</form>
 				<div className="login_hero_register">
 					<Link to="/register" className="login_hero_register_after">
