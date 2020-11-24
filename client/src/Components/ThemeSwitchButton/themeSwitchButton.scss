@@ -3,20 +3,6 @@
 		display: none;
 	}
 
-	& input:checked + .theme_switch {
-		.round {
-			transform: translateX(2.1em);
-		}
-
-		.icon-Sun {
-			color: var(--gray-color);
-		}
-
-		.icon-Moon {
-			color: #ffffff;
-		}
-	}
-
 	& .theme_switch {
 		display: flex;
 		height: 2.6rem;
@@ -50,8 +36,23 @@
 			position: absolute;
 			border-radius: 100px;
 			top: 0.4em;
-			left: 0.5em;
+			left: 30px;
+			transform: translateX(-75%);
 			transition: transform 0.2s linear;
+		}
+	}
+	& input:checked + .theme_switch {
+		.round {
+			right: 30px;
+			transform: translateX(75%);
+		}
+
+		.icon-Sun {
+			color: var(--gray-color);
+		}
+
+		.icon-Moon {
+			color: #ffffff;
 		}
 	}
 }
