@@ -5,7 +5,7 @@
 	justify-content: center;
 	align-items: center;
 	background-color: var(--bg);
-	height: 100vh;
+	min-height: 100vh;
 	width: 70%;
 
 	&_theme_switch_wrapper {
@@ -17,13 +17,10 @@
 	}
 
 	&_entry_wrapper {
-		height: auto;
-		width: auto;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		margin-bottom: 2.6em;
 
 		& h4 {
 			margin: 1em 0;
@@ -40,16 +37,25 @@
 		flex-direction: column;
 		align-items: flex-start;
 
-		& input {
+		&_input,
+		&_submit {
 			width: 30em;
 			margin: 1em 0;
 			padding: 0.8rem;
 			border-radius: 0.5rem;
 			border: none;
-			background-color: var(--secondary-bg);
-			color: var(--text-color);
 			font-size: 1em;
 			direction: ltr;
+		}
+		&_input {
+			background-color: var(--secondary-bg);
+			color: var(--text-color);
+		}
+		&_submit {
+			background-color: var(--primery-color) !important;
+			color: #ffffff !important;
+			font-weight: bold;
+			cursor: pointer;
 		}
 
 		& label {
@@ -69,13 +75,6 @@
 					width: 14.5em;
 				}
 			}
-		}
-
-		&_submit {
-			background-color: var(--primery-color) !important;
-			color: #ffffff !important;
-			font-weight: bold;
-			cursor: pointer;
 		}
 	}
 

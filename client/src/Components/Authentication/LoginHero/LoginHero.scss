@@ -5,15 +5,15 @@
 	justify-content: center;
 	align-items: center;
 	background-color: var(--bg);
-	height: 100vh;
+	min-height: 100vh;
 	width: 70%;
 
 	&_theme_switch_wrapper {
+		left: 5rem;
+		top: 4rem;
 		display: flex;
 		position: absolute;
 		align-items: center;
-		left: 5rem;
-		top: 4rem;
 	}
 
 	&_entry_wrapper {
@@ -23,11 +23,10 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		margin-bottom: 9em;
+		position: relative;
 
 		& h4 {
 			margin: 1em 0;
-			// margin-right: 2em;
 			align-self: flex-start;
 			font-size: 1.1em;
 			color: var(--text-color);
@@ -35,32 +34,35 @@
 	}
 
 	&_form {
-		height: auto;
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
 
-		& input {
+		&_input,
+		&_submit {
 			width: 30em;
 			margin: 1em 0;
 			padding: 0.8rem;
 			border-radius: 0.5rem;
 			border: none;
-			background-color: var(--secondary-bg);
-			color: var(--text-color);
 			font-size: 1em;
 			direction: ltr;
 		}
 
-		& label {
-			color: var(--gray-color);
+		&_input {
+			background-color: var(--secondary-bg);
+			color: var(--text-color);
 		}
 
 		&_submit {
-			background-color: var(--primery-color) !important;
-			color: #ffffff !important;
+			background-color: var(--primery-color);
+			color: #ffffff;
 			font-weight: bold;
 			cursor: pointer;
+		}
+
+		& label {
+			color: var(--gray-color);
 		}
 	}
 
@@ -71,7 +73,7 @@
 		& a {
 			color: var(--primery-color);
 			margin: 0.5rem;
-			font-family: IRANSans !important;
+			font-family: IRANSans;
 
 			&:hover {
 				color: var(--gray-color);
