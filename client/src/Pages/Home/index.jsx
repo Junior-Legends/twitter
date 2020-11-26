@@ -7,13 +7,11 @@ import SideBar from "../../Components/SideBar";
 
 const Home = () => {
 	return (
-		<>
-			<div className="home">
-				<Header />
-				<TimeLine />
-				<SideBar />
-			</div>
-		</>
+		<div className="home">
+			<Header />
+			<TimeLine />
+			<SideBar />
+		</div>
 	);
 };
 
