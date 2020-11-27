@@ -12,7 +12,7 @@ const ThemeSwitchButton = () => {
 		<>
 			<div className="theme_switch_button">
 				<input
-					defaultChecked={theme === themes.dark}
+					checked={theme === themes.dark}
 					type="checkbox"
 					id="checkbox"
 					onChange={toggleTheme}
