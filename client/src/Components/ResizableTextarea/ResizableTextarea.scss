@@ -1,0 +1,12 @@
+.resizable_textarea {
+	background-color: transparent;
+	width: 100%;
+	resize: none;
+	font-size: inherit;
+	color: var(--text-color);
+	border: none;
+	overflow: hidden;
+}
+.resizable_textarea::placeholder {
+	color: var(--gray-color);
+}
