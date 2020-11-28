@@ -1,24 +1,24 @@
-.header_profile-header {
+.sideNavbar_user-profile {
 	display: flex;
 	align-items: center;
 
-	.profile-header_avatar {
+	&-avatar_image {
 		width: 3rem;
 		height: 3rem;
 		border-radius: 100rem;
 		margin-left: 0.7rem;
 	}
 
-	.profile-header_info {
+	&_info {
 		display: flex;
 		flex-direction: column;
 
-		.info_name {
+		&_name {
 			font-size: 1.3em;
 			color: var(--text-color);
 		}
 
-		.info_user-name {
+		&_username {
 			font-size: 0.8em;
 			color: var(--gray-color);
 			direction: ltr;

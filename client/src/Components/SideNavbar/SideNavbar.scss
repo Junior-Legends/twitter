@@ -1,11 +1,11 @@
-header {
+.sideNavbar_header {
 	min-height: 100vh;
 	position: relative;
 	overflow: hidden;
 	display: flex;
 	justify-content: flex-end;
 
-	.header_container {
+	.sideNavbar_container {
 		position: fixed;
 		display: flex;
 		padding-top: 3rem;

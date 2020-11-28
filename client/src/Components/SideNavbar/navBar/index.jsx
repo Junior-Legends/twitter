@@ -5,7 +5,7 @@ import NewTweetButton from "./newTweetButton";
 
 const NavBar = () => {
 	return (
-		<nav className="header_nav-bar">
+		<nav className="sideNavbar_nav-items">
 			<NavItem to="/" icon="Home">
 				خانه
 			</NavItem>
