@@ -1,0 +1,9 @@
+.header {
+	width: 100%;
+	border-bottom: 1px solid var(--gray-color);
+
+	& h3 {
+		margin: 1.1rem;
+		margin-right: 1.5rem;
+	}
+}

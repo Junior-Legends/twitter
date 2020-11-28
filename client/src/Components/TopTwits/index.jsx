@@ -8,32 +8,27 @@ import ResizableTextarea from "../ResizableTextarea";
 const TopTwits = () => {
 	return (
 		<>
-			<main className="top_twits_main_wrapper">
-				<section className="top_twits_header">
-					<h3>خانه</h3>
-				</section>
-				<section className="top_twits_user_wrapper">
-					<div className="top_twits_user">
-						<div className="top_twits_user_top_elements">
-							<img
-								className="top_twits_user_profile_image"
-								src={amirly}
-								alt="aks"
-							/>
-							<ResizableTextarea
-								style={{ marginRight: ".5rem" }}
-								placeholder="چه اتفاقی افتاده است؟"
-							></ResizableTextarea>
-						</div>
-						<div className="top_twits_user_bottom_elements">
-							<i className="icon-Image"></i>
-							<button>توییت</button>
-						</div>
+			<section className="top_twits_user_wrapper">
+				<div className="top_twits_user">
+					<div className="top_twits_user_top_elements">
+						<img
+							className="top_twits_user_profile_image"
+							src={amirly}
+							alt="aks"
+						/>
+						<ResizableTextarea
+							style={{ marginRight: ".5rem" }}
+							placeholder="چه اتفاقی افتاده است؟"
+						></ResizableTextarea>
 					</div>
-				</section>
+					<div className="top_twits_user_bottom_elements">
+						<i className="icon-Image"></i>
+						<button>توییت</button>
+					</div>
+				</div>
+			</section>
 
-				<Twits userInfo={topTwits} />
-			</main>
+			<Twits userInfo={topTwits} />
 		</>
 	);
 };

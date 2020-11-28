@@ -1,26 +1,4 @@
 .top_twits {
-	&_main_wrapper {
-		height: 100%;
-		width: 600px;
-		margin: 0 2.5rem;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		align-items: center;
-		border-right: 1px solid var(--gray-color);
-		border-left: 1px solid var(--gray-color);
-	}
-
-	&_header {
-		align-self: flex-start;
-		width: 100%;
-		border-bottom: 1px solid var(--gray-color);
-
-		& h3 {
-			margin: 1.1rem;
-			margin-right: 1.5rem;
-		}
-	}
 	&_user_wrapper {
 		width: 100%;
 	}
