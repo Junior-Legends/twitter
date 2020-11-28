@@ -33,15 +33,6 @@
 		border-radius: 13px;
 		background-color: var(--secondary-bg);
 
-		&_interjection_input {
-			color: var(--text-color);
-			background: transparent;
-			border: none;
-			margin-right: 0.75rem;
-		}
-		&_interjection_input::placeholder {
-			color: var(--gray-color);
-		}
 		&_top_elements {
 			display: flex;
 			padding: 1rem;
