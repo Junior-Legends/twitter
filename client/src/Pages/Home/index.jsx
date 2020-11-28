@@ -2,14 +2,14 @@ import React from "react";
 
 // import Main Components
 import Header from "../../Components/Header";
-import TimeLine from "../../Components/TimeLine";
+import TopTwits from "../../Components/TopTwits";
 import SideBar from "../../Components/SideBar";
 
 const Home = () => {
 	return (
 		<div className="home">
 			<Header />
-			<TimeLine />
+			<TopTwits />
 			<SideBar />
 		</div>
 	);
