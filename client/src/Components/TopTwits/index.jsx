@@ -3,6 +3,7 @@ import "./TopTwits.scss";
 import amirly from "../../Assets/images/amirly.png";
 import Twitts from "../Twitts";
 import topTwits from "./topTwits.example";
+import ResizableTextarea from "../ResizableTextarea";
 
 const TopTwits = () => {
 	return (
@@ -19,12 +20,10 @@ const TopTwits = () => {
 								src={amirly}
 								alt="aks"
 							/>
-							<input
-								className="top_twits_user_interjection_input"
-								type="text"
-								name="twit"
+							<ResizableTextarea
+								style={{ marginRight: ".5rem" }}
 								placeholder="چه اتفاقی افتاده است؟"
-							/>
+							></ResizableTextarea>
 						</div>
 						<div className="top_twits_user_bottom_elements">
 							<i className="icon-Image"></i>
