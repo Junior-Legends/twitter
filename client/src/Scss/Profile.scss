@@ -1,0 +1,8 @@
+.profile {
+	display: flex;
+	justify-content: center;
+	background-color: var(--bg);
+	color: var(--text-color);
+	min-height: 100vh;
+	scroll-behavior: auto;
+}
