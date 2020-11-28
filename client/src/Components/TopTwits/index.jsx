@@ -1,7 +1,7 @@
 import React from "react";
 import "./TopTwits.scss";
 import amirly from "../../Assets/images/amirly.png";
-import Twitts from "../Twitts";
+import Twits from "../Twits";
 import topTwits from "./topTwits.example";
 import ResizableTextarea from "../ResizableTextarea";
 
@@ -32,7 +32,7 @@ const TopTwits = () => {
 					</div>
 				</section>
 
-				<Twitts userInfo={topTwits} />
+				<Twits userInfo={topTwits} />
 			</main>
 		</>
 	);

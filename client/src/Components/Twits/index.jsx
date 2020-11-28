@@ -1,21 +1,21 @@
 import React from "react";
-import "./Twitts.scss";
+import "./Twits.scss";
 
-const index = ({ userInfo }) => {
-	let twitts = userInfo.map(item => (
-		<section className="twitts_wrapper">
-			<div className="twitts_user_wrapper">
-				<div className="twitts_user_info">
+const Twits = ({ userInfo }) => {
+	let twits = userInfo.map((item) => (
+		<section className="twits_wrapper">
+			<div className="twits_user_wrapper">
+				<div className="twits_user_info">
 					<img className="" src={item.pic} alt="aks" />
-					<div className="twitts_user_info_p">
+					<div className="twits_user_info_p">
 						<p>{item.name}</p>
-						<p className="twitts_user_userId">{item.userId}</p>
+						<p className="twits_user_userId">{item.userId}</p>
 					</div>
 					{item.verified ? <i className="icon-Verified"></i> : null}
 				</div>
-				<p className="twitts_user_time">1 ساعت پیش</p>
+				<p className="twits_user_time">1 ساعت پیش</p>
 			</div>
-			<div className="twitts_contents">
+			<div className="twits_contents">
 				<p>
 					لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
 					از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و
@@ -25,7 +25,7 @@ const index = ({ userInfo }) => {
 				{item.image ? <img src={item.image} alt="aks" /> : null}
 			</div>
 
-			<div className="twitts_icons">
+			<div className="twits_icons">
 				<i className="icon-Like">
 					<p>{item.like}</p>
 				</i>
@@ -40,7 +40,7 @@ const index = ({ userInfo }) => {
 		</section>
 	));
 
-	return <>{twitts}</>;
+	return <div className="twits">{twits}</div>;
 };
 
-export default index;
+export default Twits;
