@@ -1,21 +1,21 @@
 import React from "react";
-import "./Sidebar.scss";
-import { ReactComponent as Logo } from "../../../Assets/images/logo.svg";
+import "./Promo.scss";
+import { ReactComponent as Logo } from "../../Assets/images/logo.svg";
 
-const Sidebar = () => {
+const Promo = () => {
 	return (
-		<div className="auth_sidebar">
-			<div className="sidebar_app-brand">
+		<div className="auth_promo">
+			<div className="promo_app-brand">
 				<div>
 					<Logo className="app-brand_logo" />
 					<h1 className="app-brand_name">توییتر فارسی</h1>
 				</div>
-				<span className="sidebar_app-sumarry">
+				<span className="promo_app-sumarry">
 					ببینید اکنون در جهان چه اتفاقی می افتد...
 				</span>
 			</div>
 
-			<div className="sideBar_feature">
+			<div className="promo_feature">
 				<div className="feature_item">
 					<i className="icon-Search-fill"></i>
 					<span>علاقه مندی هایتان را دنبال کنید.</span>
@@ -34,7 +34,7 @@ const Sidebar = () => {
 			<div></div>
 			<a
 				href="https://github.com/Junior-Legends/twitter"
-				className="sideBar_github-page"
+				className="promo_github-page"
 			>
 				<i className="icon-Github"></i>این پروژه منبع باز می باشد.
 			</a>
@@ -42,4 +42,4 @@ const Sidebar = () => {
 	);
 };
 
-export default Sidebar;
+export default Promo;

@@ -1,4 +1,4 @@
-.auth_sidebar {
+.auth_promo {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -9,7 +9,7 @@
 	color: var(--text-color);
 	min-height: 100vh;
 
-	.sidebar_app-brand {
+	.promo_app-brand {
 		div {
 			display: flex;
 			align-items: center;
@@ -27,12 +27,12 @@
 			}
 		}
 
-		.sidebar_app-sumarry {
+		.promo_app-sumarry {
 			color: var(--gray-color);
 		}
 	}
 
-	.sideBar_feature {
+	.promo_feature {
 		.feature_item {
 			display: flex;
 			align-items: center;
@@ -49,7 +49,7 @@
 			}
 		}
 	}
-	.sideBar_github-page {
+	.promo_github-page {
 		margin: 0 auto;
 		margin-bottom: 50px;
 		display: flex;
