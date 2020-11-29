@@ -1,8 +1,8 @@
 import React from "react";
 import "./Twits.scss";
 
-const Twits = ({ userInfo }) => {
-	let twits = userInfo.map((item) => (
+const Twits = ({ usersInfo = [] }) => {
+	let twits = usersInfo.map((item) => (
 		<section className="twits_wrapper">
 			<div className="twits_user_wrapper">
 				<div className="twits_user_info">
