@@ -13,12 +13,13 @@ import ResizableTextarea from "../../Components/ResizableTextarea";
 import SearchBox from "../../Components/searchBox";
 import Trends from "../../Components/trends";
 import Followers from "../../Components/followers";
+import MainContent from "../../Components/MainContent";
 
 const Home = () => {
 	return (
 		<div className="home">
 			<SideNavbar />
-			<div className="home_top_twits_wrapper">
+			<MainContent>
 				<Header title="خانه" />
 				<section className="top_twits_user_wrapper">
 					<div className="top_twits_user">
@@ -41,7 +42,8 @@ const Home = () => {
 				</section>
 
 				<Twits usersInfo={dummyUsersInfo} />
-			</div>
+			</MainContent>
+
 			<LeftSideContent>
 				<SearchBox />
 				<Trends />
