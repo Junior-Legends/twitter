@@ -9,7 +9,9 @@ const ResizableTextarea = ({ style, value, onChange, ...attrs }) => {
 	const onChangeHandler = (event) => {
 		if (onChange) onChange(event);
 		const { scrollHeight } = event.currentTarget;
-		if (textareaHeight !== scrollHeight) setTextareaHeight(scrollHeight);
+
+		setTextareaHeight("auto");
+		setTextareaHeight(scrollHeight);
 	};
 
 	return (
