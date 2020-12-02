@@ -3,7 +3,7 @@ import "./Twits.scss";
 
 const Twits = ({ usersInfo = [] }) => {
 	let twits = usersInfo.map((item) => (
-		<section className="twits_wrapper">
+		<section className="twits_wrapper" key={item.username}>
 			<div className="twits_user_wrapper">
 				<div className="twits_user_info">
 					<img className="" src={item.pic} alt="aks" />
