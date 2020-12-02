@@ -4,7 +4,7 @@ import React from "react";
 import SideNavbar from "../../Components/SideNavbar";
 import {
 	usersInfo as dummyUsersInfo,
-	amin,
+	amir,
 } from "../../Constants/Dummies/userData.dummy";
 import SideBar from "../../Components/SideBar";
 import Header from "../../Components/Header";
@@ -22,7 +22,7 @@ const Home = () => {
 						<div className="top_twits_user_top_elements">
 							<img
 								className="top_twits_user_profile_image"
-								src={amin.pic}
+								src={amir.pic}
 								alt="aks"
 							/>
 							<ResizableTextarea
