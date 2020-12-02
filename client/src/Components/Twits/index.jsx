@@ -9,7 +9,7 @@ const Twits = ({ usersInfo = [] }) => {
 					<img className="" src={item.pic} alt="aks" />
 					<div className="twits_user_info_p">
 						<p>{item.name}</p>
-						<p className="twits_user_userId">{item.userId}</p>
+						<p className="twits_user_username">{item.username}</p>
 					</div>
 					{item.verified ? <i className="icon-Verified"></i> : null}
 				</div>
