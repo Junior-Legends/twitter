@@ -6,15 +6,13 @@ import Profile from "./profile";
 
 const SideNavbar = () => {
 	return (
-		<header className="sideNavbar_header">
-			<div className="sideNavbar_container">
-				<div>
-					<SideNavbarLogo />
-					<NavBar />
-				</div>
-				<Profile />
+		<div className="sideNavbar_container">
+			<div>
+				<SideNavbarLogo />
+				<NavBar />
 			</div>
-		</header>
+			<Profile />
+		</div>
 	);
 };
 

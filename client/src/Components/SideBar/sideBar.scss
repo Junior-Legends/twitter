@@ -1,12 +1,6 @@
-.side-bar {
-	position: relative;
-	overflow: hidden;
-
-	.side-bar_container {
-		position: fixed;
-		display: flex;
-		padding-top: 3rem;
-		flex-direction: column;
-		width: 300px;
-	}
+.side-bar_container {
+	display: flex;
+	padding-top: 3rem;
+	flex-direction: column;
+	width: 300px;
 }

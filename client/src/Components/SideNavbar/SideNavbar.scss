@@ -1,18 +1,9 @@
-.sideNavbar_header {
-	min-height: 100vh;
-	position: relative;
-	overflow: hidden;
+.sideNavbar_container {
 	display: flex;
-	justify-content: flex-end;
-
-	.sideNavbar_container {
-		position: fixed;
-		display: flex;
-		padding-top: 3rem;
-		flex-direction: column;
-		justify-content: space-between;
-		height: 100%;
-		width: 220px;
-		padding-bottom: 5rem;
-	}
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	width: 220px;
+	padding-bottom: 5rem;
+	padding-top: 3rem;
 }

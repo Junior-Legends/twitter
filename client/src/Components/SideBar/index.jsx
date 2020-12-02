@@ -6,12 +6,10 @@ import Fallow from "./fallow";
 
 const SideBar = () => {
 	return (
-		<div className="side-bar">
-			<div className="side-bar_container">
-				<SearchBox />
-				<Trends />
-				<Fallow />
-			</div>
+		<div className="side-bar_container">
+			<SearchBox />
+			<Trends />
+			<Fallow />
 		</div>
 	);
 };
