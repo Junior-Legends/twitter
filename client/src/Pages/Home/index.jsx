@@ -7,21 +7,19 @@ import {
 	amir,
 } from "../../Constants/Dummies/userData.dummy";
 import LeftSideContent from "../../Components/LeftSideContent";
-import Header from "../../Components/Header";
 import Twits from "../../Components/Twits";
 import ResizableTextarea from "../../Components/ResizableTextarea";
 import SearchBox from "../../Components/searchBox";
 import Trends from "../../Components/trends";
 import Followers from "../../Components/followers";
-import MainContent from "../../Components/MainContent";
+import Main from "../../Components/Main";
 import "./Home.scss";
 
 const Home = () => {
 	return (
 		<div className="home">
 			<SideNavbar />
-			<MainContent>
-				<Header title="خانه" />
+			<Main title="خانه">
 				<section className="top_twits_user_wrapper">
 					<div className="top_twits_user">
 						<div className="top_twits_user_top_elements">
@@ -43,7 +41,7 @@ const Home = () => {
 				</section>
 
 				<Twits usersInfo={dummyUsersInfo} />
-			</MainContent>
+			</Main>
 
 			<LeftSideContent>
 				<SearchBox />
