@@ -1,11 +1,11 @@
 import React from "react";
 
-// import Main Components
 import Promo from "../../Components/Promo";
 import { useForm } from "react-hook-form";
 import ThemeSwitchButton from "../../Components/ThemeSwitchButton";
 import ValidationErrorMessage from "../../ValidationErrorMessage";
 import { Link } from "react-router-dom";
+import "./Login.scss";
 
 const Login = () => {
 	const { register, handleSubmit, errors } = useForm({

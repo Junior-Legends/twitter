@@ -8,6 +8,7 @@ import SearchBox from "../../Components/searchBox";
 import Trends from "../../Components/trends";
 import Followers from "../../Components/followers";
 import MainContent from "../../Components/MainContent";
+import "./Profile.scss";
 
 const Profile = () => {
 	return (
@@ -16,6 +17,8 @@ const Profile = () => {
 
 			<MainContent>
 				<Header title="پروفایل" />
+
+				<div></div>
 				<Twits usersInfo={dummyUsersInfo} />
 			</MainContent>
 

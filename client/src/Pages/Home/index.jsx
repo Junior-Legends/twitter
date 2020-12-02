@@ -14,6 +14,7 @@ import SearchBox from "../../Components/searchBox";
 import Trends from "../../Components/trends";
 import Followers from "../../Components/followers";
 import MainContent from "../../Components/MainContent";
+import "./Home.scss";
 
 const Home = () => {
 	return (

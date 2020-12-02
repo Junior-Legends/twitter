@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Promo from "../../Components/Promo";
 import ThemeSwitchButton from "../../Components/ThemeSwitchButton";
 import ValidationErrorMessage from "../../ValidationErrorMessage";
+import "./Register.scss";
 
 const Login = () => {
 	const { register, handleSubmit, watch, errors } = useForm({
