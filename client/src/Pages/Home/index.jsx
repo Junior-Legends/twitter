@@ -6,10 +6,13 @@ import {
 	usersInfo as dummyUsersInfo,
 	amir,
 } from "../../Constants/Dummies/userData.dummy";
-import SideBar from "../../Components/SideBar";
+import LeftSideContent from "../../Components/LeftSideContent";
 import Header from "../../Components/Header";
 import Twits from "../../Components/Twits";
 import ResizableTextarea from "../../Components/ResizableTextarea";
+import SearchBox from "../../Components/searchBox";
+import Trends from "../../Components/trends";
+import Followers from "../../Components/followers";
 
 const Home = () => {
 	return (
@@ -39,7 +42,11 @@ const Home = () => {
 
 				<Twits usersInfo={dummyUsersInfo} />
 			</div>
-			<SideBar />
+			<LeftSideContent>
+				<SearchBox />
+				<Trends />
+				<Followers />
+			</LeftSideContent>
 		</div>
 	);
 };
