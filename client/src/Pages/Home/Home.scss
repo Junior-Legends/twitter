@@ -26,7 +26,7 @@
 	&_user {
 		display: flex;
 		flex-direction: column;
-		margin: 1.25rem;
+		margin-bottom: 1.25rem;
 		justify-content: space-between;
 		border-radius: 13px;
 		background-color: var(--secondary-bg);
@@ -37,6 +37,19 @@
 
 			& p {
 				margin: 5px 8px;
+				color: var(--gray-color);
+			}
+			&_interjection_input {
+				background-color: transparent;
+				width: 100%;
+				resize: none;
+				font-size: inherit;
+				color: var(--text-color);
+				border: none;
+				overflow: hidden;
+				margin-right: 0.5rem;
+			}
+			&_interjection_input::placeholder {
 				color: var(--gray-color);
 			}
 		}

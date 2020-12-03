@@ -29,7 +29,7 @@ const Home = () => {
 								alt="aks"
 							/>
 							<ResizableTextarea
-								style={{ marginRight: ".5rem" }}
+								className="top_twits_user_top_elements_interjection_input"
 								placeholder="چه اتفاقی افتاده است؟"
 							></ResizableTextarea>
 						</div>

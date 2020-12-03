@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useRef } from "react";
-import "./ResizableTextarea.scss";
 
 const ResizableTextarea = ({ style, value, onChange, ...attrs }) => {
 	const textareaEl = useRef();
@@ -16,7 +15,7 @@ const ResizableTextarea = ({ style, value, onChange, ...attrs }) => {
 
 	return (
 		<textarea
-			className="resizable_textarea"
+			// className="resizable_textarea"
 			onChange={onChangeHandler}
 			ref={textareaEl}
 			style={{ ...style, height: textareaHeight }}
