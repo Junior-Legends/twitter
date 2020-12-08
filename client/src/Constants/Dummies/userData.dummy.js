@@ -2,6 +2,7 @@ import aminPic from "../../Assets/images/amin.png";
 import hamedPic from "../../Assets/images/hamed.png";
 import amirPic from "../../Assets/images/amirly.png";
 import twitt_pic from "../../Assets/images/twitt_pic.png";
+import post_image from "../../Assets/images/post_image.jpg";
 
 const amir = {
 	name: "Amir",
@@ -26,4 +27,4 @@ const hamed = {
 };
 const usersInfo = [amin, hamed, amir];
 
-export { usersInfo, amin, amir, hamed };
+export { usersInfo, amin, amir, hamed, post_image };
