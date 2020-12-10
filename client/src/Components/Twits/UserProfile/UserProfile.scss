@@ -1,0 +1,31 @@
+.user_profile {
+	display: flex;
+	margin: .7rem ;
+	align-items: center;
+
+	& img {
+		height: 2.4rem;
+		width: 2.4rem;
+		border-radius: 50%;
+	}
+	&_info {
+		margin-right: 0.5rem;
+		margin-left: 2px;
+
+		&_some {
+			display: flex;
+			flex-direction: row;
+			width: auto;
+		}
+	}
+	.icon-Verified {
+		font-size: 0.8rem;
+		align-self: flex-start;
+		margin-top: 0.35rem;
+		margin-right: 5px;
+	}
+	&_username {
+		color: var(--gray-color);
+		font-size: 13px;
+	}
+}
