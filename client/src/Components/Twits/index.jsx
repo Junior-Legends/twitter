@@ -1,18 +1,19 @@
 import React from "react";
 import "./Twits.scss";
+import UserProfile from "./UserProfile/UserProfile";
 
 const Twits = ({ usersInfo = [] }) => {
-	let twits = usersInfo.map((item) => (
+	let twits = usersInfo.map(item => (
 		<section className="twits_wrapper" key={item.username}>
 			<div className="twits_user_wrapper">
-				<div className="twits_user_info">
-					<img className="" src={item.pic} alt="aks" />
-					<div className="twits_user_info_p">
-						<p>{item.name}</p>
-						<p className="twits_user_username">{item.username}</p>
-					</div>
-					{item.verified ? <i className="icon-Verified"></i> : null}
-				</div>
+				<UserProfile
+					user={{
+						pic: item.pic,
+						name: item.name,
+						username: item.username,
+						verified: item.verified
+					}}
+				/>
 				<p className="twits_user_time">1 ساعت پیش</p>
 			</div>
 			<div className="twits_contents">

@@ -1,7 +1,4 @@
-.twits {
-	border-radius: 13px;
-	background-color: var(--secondary-bg);
-
+.twitts {
 	&_wrapper {
 		display: flex;
 		flex-direction: column;
@@ -10,14 +7,36 @@
 		height: auto;
 		border-bottom: 1px solid var(--gray-color);
 	}
-	&_wrapper:last-child {
-		border-bottom: none;
-	}
+
 	&_user {
 		&_wrapper {
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
+		}
+		&_info {
+			display: flex;
+			margin: 1.3rem;
+			align-items: center;
+
+			& img {
+				height: 2.4rem;
+				width: 2.4rem;
+				border-radius: 50%;
+			}
+			&_p {
+				margin-right: 0.5rem;
+				margin-left: 2px;
+			}
+			.icon-Verified {
+				font-size: 0.8rem;
+				align-self: flex-start;
+				margin-top: 0.35rem;
+			}
+		}
+		&_userId {
+			color: var(--gray-color);
+			font-size: 13px;
 		}
 		&_time {
 			color: var(--gray-color);
@@ -27,7 +46,7 @@
 	}
 
 	&_contents {
-		// margin: 0 auto;
+		margin: 1.3rem auto;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -36,10 +55,10 @@
 			font-size: 0.9rem;
 			margin: 5px 10px;
 			text-align: justify;
-			word-spacing: -1px;
+			// word-spacing: 20px;
 		}
 		& img {
-			margin-top: 0.7rem;
+			margin-top: 0.9rem;
 		}
 	}
 	&_icons {

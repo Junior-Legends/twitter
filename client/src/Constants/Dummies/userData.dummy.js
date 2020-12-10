@@ -7,23 +7,23 @@ import post_image from "../../Assets/images/post_image.jpg";
 const amir = {
 	name: "Amir",
 	pic: amirPic,
-	username: "@AmirhBeigi",
+	username: "AmirhBeigi@",
 	likes: 200,
-	verified: true,
+	verified: true
 };
 const amin = {
 	name: "Amin",
 	pic: aminPic,
 	username: "amin@",
 	like: 150,
-	verified: true,
+	verified: true
 };
 const hamed = {
 	name: "Hamed",
 	pic: hamedPic,
 	username: "hamed@",
 	like: 350,
-	image: twitt_pic,
+	image: twitt_pic
 };
 const usersInfo = [amin, hamed, amir];
 

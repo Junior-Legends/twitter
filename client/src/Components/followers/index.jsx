@@ -5,6 +5,7 @@ import "./follow.scss";
 import FollowItem from "./followItem";
 
 import { amin, hamed } from "../../Constants/Dummies/userData.dummy";
+import UserProfile from "./../Twits/UserProfile/UserProfile";
 
 const Followers = () => {
 	return (
@@ -18,8 +19,19 @@ const Followers = () => {
 				</div>
 
 				<div className="follow_container">
-					{[amin, hamed].map((item) => (
-						<FollowItem key={item.username} userInfo={item} />
+					{[amin, hamed].map(item => (
+						// <FollowItem key={item.username} userInfo={item} />
+						<div className="follow-item">
+							<UserProfile
+								user={{
+									pic: item.pic,
+									name: item.name,
+									username: item.username,
+									verified: item.verified
+								}}
+							/>
+							<button className="follow-item_follow-button">دنبال کردن</button>
+						</div>
 					))}
 				</div>
 			</div>
