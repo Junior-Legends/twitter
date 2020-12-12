@@ -3,7 +3,7 @@ import "./Twits.scss";
 import UserProfile from "./UserProfile/UserProfile";
 
 const Twits = ({ usersInfo = [] }) => {
-	let twits = usersInfo.map(item => (
+	let twits = usersInfo.map((item) => (
 		<section className="twits_wrapper" key={item.username}>
 			<div className="twits_user_wrapper">
 				<UserProfile
@@ -11,9 +11,8 @@ const Twits = ({ usersInfo = [] }) => {
 						pic: item.pic,
 						name: item.name,
 						username: item.username,
-						verified: item.verified
+						verified: item.verified,
 					}}
-					fix_style=""
 				/>
 				<p className="twits_user_time">1 ساعت پیش</p>
 			</div>

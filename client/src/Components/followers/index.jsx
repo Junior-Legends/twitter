@@ -19,7 +19,7 @@ const Followers = () => {
 				</div>
 
 				<div className="follow_container">
-					{[amin, hamed].map(item => (
+					{[amin, hamed].map((item) => (
 						// <FollowItem key={item.username} userInfo={item} />
 						<div className="follow-item">
 							<UserProfile
@@ -27,9 +27,9 @@ const Followers = () => {
 									pic: item.pic,
 									name: item.name,
 									username: item.username,
-									verified: item.verified
+									verified: item.verified,
 								}}
-								fix_style="margin"
+								style={{ margin: 0 }}
 							/>
 							<button className="follow-item_follow-button">دنبال کردن</button>
 						</div>

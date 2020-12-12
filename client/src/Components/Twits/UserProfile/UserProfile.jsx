@@ -1,9 +1,9 @@
 import React from "react";
 import "./UserProfile.scss";
 
-const UserProfile = ({ user, fix_style }) => {
+const UserProfile = ({ user, style }) => {
 	return (
-		<div className={`user_profile ${fix_style}`}>
+		<div className={`user_profile`} style={style}>
 			<img className="" src={user.pic} alt="aks" />
 			<div className="user_profile_info">
 				<div className="user_profile_info_some">
