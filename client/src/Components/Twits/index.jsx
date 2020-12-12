@@ -13,6 +13,7 @@ const Twits = ({ usersInfo = [] }) => {
 						username: item.username,
 						verified: item.verified
 					}}
+					fix_style=""
 				/>
 				<p className="twits_user_time">1 ساعت پیش</p>
 			</div>
