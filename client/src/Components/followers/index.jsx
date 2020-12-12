@@ -29,6 +29,7 @@ const Followers = () => {
 									username: item.username,
 									verified: item.verified
 								}}
+								fix_style="margin"
 							/>
 							<button className="follow-item_follow-button">دنبال کردن</button>
 						</div>

@@ -9,6 +9,7 @@ const amir = {
 	username: "AmirhBeigi@",
 	likes: 200,
 	verified: true
+	// logged: true
 };
 const amin = {
 	name: "Amin",

@@ -1,6 +1,6 @@
 .user_profile {
 	display: flex;
-	margin: .7rem ;
+	margin: 0.7rem;
 	align-items: center;
 
 	& img {
@@ -28,4 +28,11 @@
 		color: var(--gray-color);
 		font-size: 13px;
 	}
+}
+
+//extra style for fixing componet style in other positions !
+// this style send to componet withe a props
+
+.margin {
+	margin: 0;
 }
