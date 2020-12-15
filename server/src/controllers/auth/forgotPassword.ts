@@ -29,7 +29,7 @@ const forgotPassword = asyncCatch(async (req: Request, res: Response) => {
 
 	await mailer.sendMail({
 		from: '"the junior developers 😉"',
-		to: 'amirabbasgamer2@gmail.com',
+		to: user.email,
 		subject: 'forgot password ✔',
 		text:
 			`Hi ${user.name || user.username}` +
