@@ -1,4 +1,4 @@
-.follow-item {
+.follow_item {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -37,7 +37,7 @@
 		}
 	}
 
-	&_follow-button {
+	&_follow_button {
 		all: unset;
 		border: 1.5px solid var(--primery-color);
 		color: var(--primery-color);
@@ -46,5 +46,6 @@
 		height: 2rem;
 		font-size: 0.8em;
 		padding: 0 1rem;
+		cursor: pointer;
 	}
 }

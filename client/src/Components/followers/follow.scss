@@ -19,6 +19,9 @@
 			color: var(--gray-color);
 			font-size: 0.9em;
 			font-weight: bold;
+			&:hover {
+				color: var(--text-color);
+			}
 		}
 	}
 
@@ -31,10 +34,3 @@
 		// padding: 0 0.5rem;
 	}
 }
-
-//styling for UserProfile Component
-// needed editing margin property in position
-//but style applyed in all components in other postion
-// .user_profile {
-// 	margin: 0;
-// }

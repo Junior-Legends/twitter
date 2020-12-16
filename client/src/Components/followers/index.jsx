@@ -12,26 +12,26 @@ const Followers = () => {
 		<>
 			<div className="follow">
 				<div className="follow_header">
-					<span className="header_title">چه کسانی منو دنبال می کنند</span>
+					<span className="header_title">چه کسانی دنبالم می کنند</span>
 					<Link to="" className="header_show-more">
 						نمایش بیشتر
 					</Link>
 				</div>
 
 				<div className="follow_container">
-					{[amin, hamed].map((item) => (
+					{[amin, hamed].map(item => (
 						// <FollowItem key={item.username} userInfo={item} />
-						<div className="follow-item">
+						<div className="follow_item">
 							<UserProfile
 								user={{
 									pic: item.pic,
 									name: item.name,
 									username: item.username,
-									verified: item.verified,
+									verified: item.verified
 								}}
 								style={{ margin: 0 }}
 							/>
-							<button className="follow-item_follow-button">دنبال کردن</button>
+							<button className="follow_item_follow_button">دنبال کردن</button>
 						</div>
 					))}
 				</div>
