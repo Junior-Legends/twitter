@@ -1,0 +1,51 @@
+.follow_item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 1rem 1rem;
+
+	&_user-info {
+		display: flex;
+		align-items: center;
+
+		img {
+			height: 2.4rem;
+			width: 2.4rem;
+			border-radius: 50%;
+		}
+
+		.user-info_info-wrap {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			margin-right: 0.5rem;
+
+			.info-wrap_name {
+				.icon-Verified {
+					font-size: 0.8rem;
+					align-self: flex-start;
+					margin-right: 0.4rem;
+				}
+			}
+
+			.info-wrap_user-name {
+				direction: ltr;
+				color: var(--gray-color);
+				font-size: 0.8em;
+			}
+		}
+	}
+
+	&_follow_button {
+		all: unset;
+		border: 1.5px solid var(--primery-color);
+		color: var(--primery-color);
+		border-radius: 100rem;
+		font-weight: bold;
+		height: 2rem;
+		font-size: 0.8em;
+		padding: 0 1rem;
+		cursor: pointer;
+	}
+}

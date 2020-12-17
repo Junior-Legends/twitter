@@ -1,0 +1,93 @@
+@import "../../utils/sass/_pixelToRem.scss";
+
+.profile {
+	display: flex;
+	justify-content: center;
+	background-color: var(--bg);
+	color: var(--text-color);
+	min-height: 100vh;
+	scroll-behavior: auto;
+
+	&_user {
+		border-radius: pxToRem(13px);
+		margin-bottom: 1rem;
+		background: var(--secondary-bg);
+		height: 250px;
+		position: relative;
+		overflow: hidden;
+
+		&_background-image {
+			width: 100%;
+		}
+
+		&_full-profile {
+			position: absolute;
+			bottom: 3rem;
+			display: flex;
+			justify-content: space-between;
+			padding: 0.7rem;
+			width: 100%;
+			&-right {
+				display: flex;
+			}
+			&-left {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: flex-end;
+			}
+			&_edit-profile-btn {
+				cursor: pointer;
+				font-size: 0.9em;
+				padding: 0.25rem 01rem;
+				border: 1px solid var(--text-color);
+				border-radius: 2rem;
+				background-color: transparent;
+				color: var(--text-color);
+			}
+			&_followers-info {
+				margin-top: 0.5rem;
+				display: flex;
+				font-size: 0.9em;
+				&_followers,
+				&_following {
+					opacity: 0.7;
+					padding: 0 0.5rem;
+				}
+			}
+			&_profile-pic {
+				height: 7rem;
+				width: 7rem;
+				border-radius: 100%;
+			}
+
+			&_profile-desc {
+				display: flex;
+				flex-direction: column;
+				// justify-content: center;
+				margin-top: 0.75rem;
+				margin-right: 1rem;
+				font-size: 1.4em;
+
+				&_name {
+					font-weight: bold;
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+
+					.icon-Verified {
+						font-size: 0.8em;
+						margin-top: 0.35rem;
+						margin-right: 5px;
+					}
+				}
+				&_username {
+					background-color: #16202a30;
+					font-size: 0.8em;
+					text-align: center;
+					border-radius: 1rem;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,13 @@
+.header_sideNavbar-logo {
+	display: flex;
+	align-items: center;
+
+	.sideNavbar-logo_image {
+		margin-left: 1rem;
+	}
+
+	.sideNavbar-logo_text {
+		font-weight: bold;
+		font-size: 1.7em;
+	}
+}

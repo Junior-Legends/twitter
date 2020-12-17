@@ -1,0 +1,27 @@
+@import "./Assets/Font/TwitterFont/style";
+@import "./themes";
+
+@font-face {
+	font-family: IRANSans;
+	src: url(./Assets/Font/IRANSans.ttf);
+}
+
+@font-face {
+	font-family: IRANSans_Bold;
+	src: url(./Assets/Font/IRANSans_Bold.ttf);
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box !important;
+	font-family: "IRANSans" !important ;
+	direction: rtl;
+}
+*:focus {
+	outline: none;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}

@@ -1,0 +1,36 @@
+.follow {
+	display: flex;
+	flex-direction: column;
+	margin-top: 2rem;
+
+	&_header {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 0.8rem;
+		padding: 0 0.9rem;
+
+		.header_title {
+			font-size: 1em;
+			font-weight: bold;
+			color: var(--text-color);
+		}
+
+		.header_show-more {
+			color: var(--gray-color);
+			font-size: 0.9em;
+			font-weight: bold;
+			&:hover {
+				color: var(--text-color);
+			}
+		}
+	}
+
+	&_container {
+		background: var(--secondary-bg);
+		display: flex;
+		flex-direction: column;
+		border-radius: 0.8rem;
+		align-items: center;
+		// padding: 0 0.5rem;
+	}
+}

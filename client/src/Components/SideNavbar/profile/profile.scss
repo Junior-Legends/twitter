@@ -1,0 +1,28 @@
+.sideNavbar_user-profile {
+	margin-top: 1rem;
+	display: flex;
+	align-items: center;
+
+	&-avatar_image {
+		width: 3rem;
+		height: 3rem;
+		border-radius: 100rem;
+		margin-left: 0.7rem;
+	}
+
+	&_info {
+		display: flex;
+		flex-direction: column;
+
+		&_name {
+			font-size: 1.3em;
+			color: var(--text-color);
+		}
+
+		&_username {
+			font-size: 0.8em;
+			color: var(--gray-color);
+			direction: ltr;
+		}
+	}
+}
