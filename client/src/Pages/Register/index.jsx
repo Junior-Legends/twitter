@@ -1,18 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import axios from "axios";
 
 import Promo from "../../Components/Promo";
 import ThemeSwitchButton from "../../Components/ThemeSwitchButton";
 import ValidationErrorMessage from "../../ValidationErrorMessage";
+import useLocalStorage from "./../../Hooks/UseLocalStorage/index";
 import "./Register.scss";
 
-const Login = () => {
+const Register = () => {
 	const { register, handleSubmit, watch, errors } = useForm({
 		mode: "onSubmit",
-		reValidateMode: "onSubmit",
+		reValidateMode: "onSubmit"
 	});
-	const onSubmit = (data) => console.log(data);
+	const [localValue, setLocalValue] = useLocalStorage("user_auth");
+	const [authenticated, setAuthenticated] = useState(false);
+	let history = useHistory();
+
+	const onSubmit = data => {
+		console.log(data);
+		axios
+			.post("https://twitter-jl.herokuapp.com/api/v1/auth/register", data)
+			.then(res => {
+				console.log(res.data.user._id);
+				if (res.status === 200) {
+					setAuthenticated(true);
+					setLocalValue(data.username);
+					history.push({
+						pathname: "/"
+					});
+				}
+			});
+	};
+
 	return (
 		<>
 			<div className="register">
@@ -32,11 +53,11 @@ const Login = () => {
 								className="register_hero_form_input"
 								spellCheck={false}
 								type="text"
-								name="name"
+								name="username"
 								ref={register({
 									required: "نام الزامی است",
 
-									pattern: /.{3,300}/i,
+									pattern: /.{3,300}/i
 								})}
 							/>
 							<label htmlFor="">ایمیل</label>
@@ -49,10 +70,10 @@ const Login = () => {
 									required: "ایمیل الزامی است",
 									pattern: {
 										value: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/i,
-										message: "ایمیل صحیح نمیباشد",
+										message: "ایمیل صحیح نمیباشد"
 									},
 									max: 300,
-									min: 4,
+									min: 4
 								})}
 							/>
 							<div className="register_hero_form_password_container">
@@ -68,8 +89,8 @@ const Login = () => {
 											pattern: {
 												value: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,300}/i,
 												message:
-													"پسورد باید شامل حروف بزرگ و کوچک ، عدد و حداقل 6 کاراکتر باشد",
-											},
+													"پسورد باید شامل حروف بزرگ و کوچک ، عدد و حداقل 6 کاراکتر باشد"
+											}
 											// "Must contain at least one number and
 											//one uppercase and lowercase letter, and at least 6 or more characters"
 										})}
@@ -81,15 +102,15 @@ const Login = () => {
 										className="register_hero_form_input"
 										spellCheck={false}
 										type="password"
-										name="passwordConfirmation"
+										name="confirmPassword"
 										ref={register({
-											validate: (value) => {
+											validate: value => {
 												console.log(value, watch("password"));
 												return (
 													value === watch("password") ||
 													"تکرار رمزعبور صحیح نمیباشد"
 												);
-											},
+											}
 										})}
 									/>
 								</div>
@@ -113,4 +134,4 @@ const Login = () => {
 	);
 };
 
-export default Login;
+export default Register;
