@@ -6,7 +6,7 @@ import axios from "axios";
 import Promo from "../../Components/Promo";
 import ThemeSwitchButton from "../../Components/ThemeSwitchButton";
 import ValidationErrorMessage from "../../ValidationErrorMessage";
-import useLocalStorage from "./../../Hooks/UseLocalStorage/index";
+import useLocalStorage from "./../../Hooks/UseLocalStorage";
 import "./Register.scss";
 
 const Register = () => {
@@ -14,24 +14,29 @@ const Register = () => {
 		mode: "onSubmit",
 		reValidateMode: "onSubmit"
 	});
+
 	const [localValue, setLocalValue] = useLocalStorage("user_auth");
 	const [authenticated, setAuthenticated] = useState(false);
-	let history = useHistory();
+
+	const history = useHistory();
+	
+	const instance = axios.create({
+		// withCredentials: true,
+		baseURL: "https://twitter-jl.herokuapp.com/api/v1/auth"
+	});
 
 	const onSubmit = data => {
 		console.log(data);
-		axios
-			.post("https://twitter-jl.herokuapp.com/api/v1/auth/register", data)
-			.then(res => {
-				console.log(res.data.user._id);
-				if (res.status === 200) {
-					setAuthenticated(true);
-					setLocalValue(data.username);
-					history.push({
-						pathname: "/"
-					});
-				}
-			});
+		instance.post("/register", data).then(res => {
+			// console.log(res.data.user._id);
+			if (res.status === 200) {
+				setAuthenticated(true);
+				setLocalValue(data.username);
+				history.push({
+					pathname: "/"
+				});
+			}
+		});
 	};
 
 	return (
