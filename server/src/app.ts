@@ -6,7 +6,7 @@ import cors from 'cors';
 import mongoSanitize from 'express-mongo-sanitize';
 import hpp from 'hpp';
 import rateLimit from 'express-rate-limit';
-import { sessionConfig } from './config';
+import { serverConfig, sessionConfig } from './config';
 import errorHandler from './middlewares/errorHandler';
 import authRoutes from './routes/auth';
 import projectConfig from './config/project';
@@ -37,7 +37,11 @@ if (projectConfig.isProduction) {
 app.use(morgan('dev'));
 app.use(
 	cors({
-		origin: '*',
+		origin: (origin, callback) => {
+			console.log(origin);
+			const isOriginAllowed = serverConfig.allowedOrigins.includes(origin);
+			callback(null, isOriginAllowed);
+		},
 		credentials: true,
 	})
 );
